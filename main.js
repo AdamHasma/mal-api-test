@@ -9,9 +9,7 @@ const btn = document.querySelector(".btn");
 // HTML Basic Structure
 btn.addEventListener("click", getPosts);
 contentWrapper.addEventListener('click', function(e) {
-  if (scoreSelect.contains(e.target) || btn.contains(e.target) || typeSelect.contains(e.target) || genreSelect.contains(e.target)) {
-    // Clicked in box
-  } else {
+  if (scoreSelect.contains(e.target) || btn.contains(e.target) || typeSelect.contains(e.target) || genreSelect.contains(e.target)) {} else {
     scoreSelect.selectedIndex = "-1";
   }
 });
@@ -26,9 +24,10 @@ async function getPosts() {
   let html = '';
   for (let i = 0, len = data.results.length; i < len; i++) {
     let htmlSegment =
-      `     <div class="mw-full">
+      `   <div class="mw-full">
             <div class="card p-0">
               <img src="${data.results[i].image_url}" class="img-fluid rounded-top" alt="...">
+              <p class="score font-size-12 text-monospace">Score: ${data.results[i].score}</p>
               <div class="content">
                 <h2 class="content-title">
                   ${data.results[i].title}
@@ -44,8 +43,8 @@ async function getPosts() {
           </div>`;
 
     html += htmlSegment;
-    cardContainer.innerHTML += html;
   }
+  cardContainer.innerHTML += html;
 };
 
 function getURL() {
