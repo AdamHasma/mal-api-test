@@ -26,6 +26,8 @@ const minusTo5 = document.getElementById("minus-to-5");
 const endDate = document.getElementById("end-date");
 let endDateValue = 2021;
 
+let genreArray = [];
+
 
 // HTML Basic Structure START
 
@@ -46,12 +48,21 @@ toggle.addEventListener("click", function() {
   }
 })
 
+const genrePush = (id, string) => {
+  if (document.getElementById(id).checked === true) {
+    genreArray.push(string)
+  } else {
+    let index = genreArray.indexOf(string);
+    if (index !== -1) {
+      genreArray.splice(index, 1);
+    }
+  }
 
+}
 
 const changeLabel = num => {
   scoreLabel.innerText = `Score range of ${num} - 10`
 }
-
 
 const booleanChange = () => {
   if (status === "") {
@@ -130,7 +141,7 @@ minusTo1.addEventListener("click", function() {
 
 // Fetching Data
 async function getPosts() {
-  const response = await fetch(`${apiUrl}/search/anime?genre=${genreSelect.value}&type=${typeSelect.value}&score=${scoreSelect.value}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`);
+  const response = await fetch(`${apiUrl}/search/anime?genre=${genreArray.join(',')}&type=${typeSelect.value}&score=${scoreSelect.value}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`);
   getURL();
   const data = await response.json();
   console.log(data);
@@ -170,5 +181,5 @@ async function getPosts() {
 };
 
 function getURL() {
-  console.log(`${apiUrl}/search/anime?genre=${genreSelect.value}&type=${typeSelect.value}&score=${scoreSelect.value}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`)
+  console.log(`${apiUrl}/search/anime?genre=${genreArray.join(',')}&type=${typeSelect.value}&score=${scoreSelect.value}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`)
 }
