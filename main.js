@@ -5,6 +5,9 @@ const scoreLabel = document.querySelector(".score-label");
 const genreSelect = document.getElementById("select-1");
 const typeSelect = document.getElementById("select-2");
 
+const unchecker = document.getElementById("checkbox-0");
+const checkboxes = document.querySelectorAll(".checkbox-container>.custom-checkbox:not(:first-child)>input");
+
 const cardContainer = document.querySelector(".card-container");
 const contentWrapper = document.querySelector(".content-wrapper");
 const dateWrapper = document.querySelector(".date-wrapper");
@@ -28,6 +31,8 @@ let endDateValue = 2021;
 
 let genreArray = [];
 
+let excludeGenreArray = [];
+
 
 // HTML Basic Structure START
 
@@ -48,6 +53,17 @@ toggle.addEventListener("click", function() {
   }
 })
 
+const excludeGenrePush = (id, string) => {
+  if (document.getElementById(id).checked === true) {
+    excludeGenreArray.push(string)
+  } else {
+    let index = excludeGenreArray.indexOf(string);
+    if (index !== -1) {
+      excludeGenreArray.splice(index, 1);
+    }
+  }
+}
+
 const genrePush = (id, string) => {
   if (document.getElementById(id).checked === true) {
     genreArray.push(string)
@@ -57,12 +73,39 @@ const genrePush = (id, string) => {
       genreArray.splice(index, 1);
     }
   }
-
 }
 
 const changeLabel = num => {
   scoreLabel.innerText = `Score range of ${num} - 10`
 }
+
+const uncheckFunction = () => {
+  if (unchecker.checked === false) {
+    console.log("you unchecked it")
+    genreArray = ["??$$%?%^"];
+    for (let i = 0, len = checkboxes.length; i < len; i++) {
+      checkboxes[i].checked = false;
+    }
+  } else if (unchecker.checked === true) {
+    console.log("you checked it")
+    genreArray = ["1", "2", "4", "7", "8", "9", "10", "11", "35", "13", "14", "15", "16", "17", "18", "19", "40", "22", "23", "24", "42", "25", "27", "29", "30", "31", "36", "41"]
+    for (let i = 0, len = checkboxes.length; i < len; i++) {
+      checkboxes[i].checked = true;
+    }
+  }
+}
+
+document.querySelector(".expand").addEventListener("click", () =>{
+  document.querySelector(".checkbox-container").classList.toggle("height-auto");
+  // document.querySelector(".expand").style.bottom = '30px';
+  document.querySelector(".expand img").classList.toggle("rotate-180");
+})
+
+document.querySelector(".expand-2").addEventListener("click", () =>{
+  document.querySelector(".checkbox-container-2").classList.toggle("height-auto");
+  // document.querySelector(".expand-2").style.bottom = '30px';
+  document.querySelector(".expand-2 img").classList.toggle("rotate-180");
+})
 
 const booleanChange = () => {
   if (status === "") {
@@ -141,7 +184,7 @@ minusTo1.addEventListener("click", function() {
 
 // Fetching Data
 async function getPosts() {
-  const response = await fetch(`${apiUrl}/search/anime?genre=${genreArray.join(',')}&type=${typeSelect.value}&score=${scoreSelect.value}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`);
+  const response = await fetch(`${apiUrl}/search/anime?genre=${genreArray.join(',')}&genre_exclude=${excludeGenreArray.join(',')}&type=${typeSelect.value}&score=${scoreSelect.value}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`);
   getURL();
   const data = await response.json();
   console.log(data);
@@ -149,37 +192,45 @@ async function getPosts() {
   let html = '';
   cardContainer.innerHTML = '';
   document.querySelector(".results-container").innerHTML = '';
-  for (let i = 0, len = data.results.length; i < len; i++) {
-    let htmlSegment =
-      `   <div class="mw-full">
-            <div class="card p-0">
-              <img src="${data.results[i].image_url}" class="img-fluid rounded-top" alt="...">
-              <p class="score font-size-12 text-monospace">Score: ${data.results[i].score}</p>
-              <div class="content">
-                <h2 class="content-title">
-                  ${data.results[i].title}
-                </h2>
-                <p class="text-muted">
-                  ${data.results[i].synopsis}
-                </p>
-                <div class="text-right">
-                  <a href="${data.results[i].url}" target="_blank" class="btn">Go To MAL</a>
+  try {
+    for (let i = 0, len = data.results.length; i < len; i++) {
+      let htmlSegment =
+        `   <div class="mw-full">
+              <div class="card p-0">
+                <img src="${data.results[i].image_url}" class="img-fluid rounded-top" alt="...">
+                <p class="score font-size-12 text-monospace">Score: ${data.results[i].score}</p>
+                <div class="content">
+                  <h2 class="content-title">
+                    ${data.results[i].title}
+                  </h2>
+                  <p class="text-muted">
+                    ${data.results[i].synopsis}
+                  </p>
+                  <div class="text-right">
+                    <a href="${data.results[i].url}" target="_blank" class="btn">Go To MAL</a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>`;
+            </div>`;
 
-    html += htmlSegment;
+      html += htmlSegment;
+    }
+    document.querySelector(".results-container").innerHTML +=
+      `
+    <h1 class="content-title results mb-0">Results</h1>
+    <p class="text-xl mt-0 mb-0 text-muted">Results are sorted starting from the best score</p>
+    `;
+
+    cardContainer.innerHTML += html;
+  } catch (err) {
+    document.querySelector(".results-container").innerHTML +=
+      `
+    <h1 class="content-title results mb-0">Oopsie Doopsie</h1>
+    <p class="text-xl mt-0 mb-0 text-muted">No results were found!</p>
+    `;
   }
-  document.querySelector(".results-container").innerHTML +=
-    `
-  <h1 class="content-title results mb-0">Results</h1>
-  <p class="text-xl mt-0 mb-0 text-muted">Results are sorted starting from the best score</p>
-  `;
-
-  cardContainer.innerHTML += html;
 };
 
 function getURL() {
-  console.log(`${apiUrl}/search/anime?genre=${genreArray.join(',')}&type=${typeSelect.value}&score=${scoreSelect.value}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`)
+  console.log(`${apiUrl}/search/anime?genre=${genreArray.join(',')}&genre_exclude=${excludeGenreArray.join(',')}&type=${typeSelect.value}&score=${scoreSelect.value}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`)
 }

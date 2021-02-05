@@ -29,7 +29,7 @@
             <option value="8" onclick="changeLabel(8)">8</option>
             <option value="9" onclick="changeLabel(9)">9</option>
           </select>
-          <select class="form-control form-control-lg" id="select-1">
+          <!-- <select class="form-control form-control-lg" id="select-1">
             <option value="" selected="selected" disabled="disabled">Select a genre</option>
             <option value="1">Action</option>
             <option value="2">Adventure</option>
@@ -59,123 +59,249 @@
             <option value="31">Super Power</option>
             <option value="36">Slice Of Life</option>
             <option value="41">Thriller</option>
-          </select>
-
+          </select> -->
+          <h2 class="content-title font-weight-normal mb-10">Should include</h2>
           <div class="checkbox-container mb-20">
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-1" value="" onclick="genrePush('checkbox-1', '1')" checked>
+              <input type="checkbox" id="checkbox-1" value="" onclick="genrePush('checkbox-1', '1')">
               <label for="checkbox-1">Action</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-2" value="" onclick="genrePush('checkbox-2', '2')" checked>
+              <input type="checkbox" id="checkbox-2" value="" onclick="genrePush('checkbox-2', '2')">
               <label for="checkbox-2">Adventure</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-3" value="" onclick="genrePush('checkbox-3', '4')" checked>
-              <label for="checkbox-2">Comedy</label>
+              <input type="checkbox" id="checkbox-3" value="" onclick="genrePush('checkbox-3', '4')">
+              <label for="checkbox-3">Comedy</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-4" value="" onclick="genrePush('checkbox-4', '7')" checked>
-              <label for="checkbox-2">Mystery</label>
+              <input type="checkbox" id="checkbox-5" value="" onclick="genrePush('checkbox-5', '8')">
+              <label for="checkbox-5">Drama</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-5" value="" onclick="genrePush('checkbox-5', '8')" checked>
-              <label for="checkbox-2">Drama</label>
+              <input type="checkbox" id="checkbox-6" value="" onclick="genrePush('checkbox-6', '9')">
+              <label for="checkbox-6">Ecchi</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-6" value="" onclick="genrePush('checkbox-6', '9')" checked>
-              <label for="checkbox-2">Ecchi</label>
+              <input type="checkbox" id="checkbox-7" value="" onclick="genrePush('checkbox-7', '10')">
+              <label for="checkbox-7">Fantasy</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-7" value="" onclick="genrePush('checkbox-7', '10')" checked>
-              <label for="checkbox-2">Fantasy</label>
+              <input type="checkbox" id="checkbox-8" value="" onclick="genrePush('checkbox-8', '11')">
+              <label for="checkbox-8">Game</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-8" value="" onclick="genrePush('checkbox-8', '11')" checked>
-              <label for="checkbox-2">Game</label>
+              <input type="checkbox" id="checkbox-9" value="" onclick="genrePush('checkbox-9', '35')">
+              <label for="checkbox-9">Harem</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-9" value="" onclick="genrePush('checkbox-9', '35')" checked>
-              <label for="checkbox-2">Harem</label>
+              <input type="checkbox" id="checkbox-10" value="" onclick="genrePush('checkbox-10', '13')">
+              <label for="checkbox-10">Historical</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-10" value="" onclick="genrePush('checkbox-10', '13')" checked>
-              <label for="checkbox-2">Historical</label>
+              <input type="checkbox" id="checkbox-11" value="" onclick="genrePush('checkbox-11', '14')">
+              <label for="checkbox-11">Horror</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-11" value="" onclick="genrePush('checkbox-11', '14')" checked>
-              <label for="checkbox-2">Horror</label>
+              <input type="checkbox" id="checkbox-12" value="" onclick="genrePush('checkbox-12', '15')">
+              <label for="checkbox-12">Kids</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-12" value="" onclick="genrePush('checkbox-12', '15')" checked>
-              <label for="checkbox-2">Kids</label>
+              <input type="checkbox" id="checkbox-13" value="" onclick="genrePush('checkbox-13', '16')">
+              <label for="checkbox-13">Magic</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-13" value="" onclick="genrePush('checkbox-13', '16')" checked>
-              <label for="checkbox-2">Magic</label>
+              <input type="checkbox" id="checkbox-14" value="" onclick="genrePush('checkbox-14', '17')">
+              <label for="checkbox-14">Martial Arts</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-14" value="" onclick="genrePush('checkbox-14', '17')" checked>
-              <label for="checkbox-2">Martial Arts</label>
+              <input type="checkbox" id="checkbox-15" value="" onclick="genrePush('checkbox-15', '18')">
+              <label for="checkbox-15">Mecha</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-15" value="" onclick="genrePush('checkbox-15', '18')" checked>
-              <label for="checkbox-2">Mecha</label>
+              <input type="checkbox" id="checkbox-16" value="" onclick="genrePush('checkbox-16', '19')">
+              <label for="checkbox-16">Music</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-16" value="" onclick="genrePush('checkbox-16', '19')" checked>
-              <label for="checkbox-2">Music</label>
+              <input type="checkbox" id="checkbox-4" value="" onclick="genrePush('checkbox-4', '7')">
+              <label for="checkbox-4">Mystery</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-17" value="" onclick="genrePush('checkbox-17', '40')" checked>
-              <label for="checkbox-2">Psychological</label>
+              <input type="checkbox" id="checkbox-17" value="" onclick="genrePush('checkbox-17', '40')">
+              <label for="checkbox-17">Psychological</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-18" value="" onclick="genrePush('checkbox-18', '22')" checked>
-              <label for="checkbox-2">Romance</label>
+              <input type="checkbox" id="checkbox-18" value="" onclick="genrePush('checkbox-18', '22')">
+              <label for="checkbox-18">Romance</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-19" value="" onclick="genrePush('checkbox-19', '23')" checked>
-              <label for="checkbox-2">School</label>
+              <input type="checkbox" id="checkbox-19" value="" onclick="genrePush('checkbox-19', '23')">
+              <label for="checkbox-19">School</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-20" value="" onclick="genrePush('checkbox-20', '24')" checked>
-              <label for="checkbox-2">Sci Fi</label>
+              <input type="checkbox" id="checkbox-20" value="" onclick="genrePush('checkbox-20', '24')">
+              <label for="checkbox-20">Sci Fi</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-21" value="" onclick="genrePush('checkbox-21', '42')" checked>
-              <label for="checkbox-2">Seinen</label>
+              <input type="checkbox" id="checkbox-21" value="" onclick="genrePush('checkbox-21', '42')">
+              <label for="checkbox-21">Seinen</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-22" value="" onclick="genrePush('checkbox-22', '25')" checked>
-              <label for="checkbox-2">Shoujo</label>
+              <input type="checkbox" id="checkbox-22" value="" onclick="genrePush('checkbox-22', '25')">
+              <label for="checkbox-22">Shoujo</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-23" value="" onclick="genrePush('checkbox-23', '27')" checked>
-              <label for="checkbox-2">Shounen</label>
+              <input type="checkbox" id="checkbox-23" value="" onclick="genrePush('checkbox-23', '27')">
+              <label for="checkbox-23">Shounen</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-24" value="" onclick="genrePush('checkbox-24', '29')" checked>
-              <label for="checkbox-2">Space</label>
+              <input type="checkbox" id="checkbox-24" value="" onclick="genrePush('checkbox-24', '29')">
+              <label for="checkbox-24">Space</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-25" value="" onclick="genrePush('checkbox-25', '30')" checked>
-              <label for="checkbox-2">Sports</label>
+              <input type="checkbox" id="checkbox-25" value="" onclick="genrePush('checkbox-25', '30')">
+              <label for="checkbox-25">Sports</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-26" value="" onclick="genrePush('checkbox-26', '31')" checked>
-              <label for="checkbox-2">Super Power</label>
+              <input type="checkbox" id="checkbox-26" value="" onclick="genrePush('checkbox-26', '31')">
+              <label for="checkbox-26">Super Power</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-27" value="" onclick="genrePush('checkbox-27', '36')" checked>
-              <label for="checkbox-2">Slice Of Life</label>
+              <input type="checkbox" id="checkbox-27" value="" onclick="genrePush('checkbox-27', '36')">
+              <label for="checkbox-27">Slice Of Life</label>
             </div>
             <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-28" value="" onclick="genrePush('checkbox-28', '41')" checked>
-              <label for="checkbox-2">Thriller</label>
+              <input type="checkbox" id="checkbox-28" value="" onclick="genrePush('checkbox-28', '41')">
+              <label for="checkbox-28">Thriller</label>
             </div>
           </div>
+          <a class="expand" href="#">
+            <div >
+              <img class="opacity" src="down-arrow-2.svg" alt="">
+            </div>
+          </a>
 
+          <!-- SECOND CHECKBOX CONTAINER -->
+          <h2 class="content-title font-weight-normal mb-10">Should NOT include</h2>
+          <div class="checkbox-container-2 mb-20">
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-1" value="" onclick="excludeGenrePush('exclude-checkbox-1', '1')">
+              <label class="not-checkbox" for="exclude-checkbox-1">Action</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-2" value="" onclick="excludeGenrePush('exclude-checkbox-2', '2')">
+              <label class="not-checkbox" for="exclude-checkbox-2">Adventure</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-3" value="" onclick="excludeGenrePush('exclude-checkbox-3', '4')">
+              <label class="not-checkbox" for="exclude-checkbox-3">Comedy</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-5" value="" onclick="excludeGenrePush('exclude-checkbox-5', '8')">
+              <label class="not-checkbox" class="not-checkbox" for="exclude-checkbox-5">Drama</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-6" value="" onclick="excludeGenrePush('exclude-checkbox-6', '9')">
+              <label class="not-checkbox" for="exclude-checkbox-6">Ecchi</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-7" value="" onclick="excludeGenrePush('exclude-checkbox-7', '10')">
+              <label class="not-checkbox" for="exclude-checkbox-7">Fantasy</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-8" value="" onclick="excludeGenrePush('exclude-checkbox-8', '11')">
+              <label class="not-checkbox" for="exclude-checkbox-8">Game</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-9" value="" onclick="excludeGenrePush('exclude-checkbox-9', '35')">
+              <label class="not-checkbox" for="exclude-checkbox-9">Harem</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-10" value="" onclick="excludeGenrePush('exclude-checkbox-10', '13')">
+              <label class="not-checkbox" for="exclude-checkbox-10">Historical</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-11" value="" onclick="excludeGenrePush('exclude-checkbox-11', '14')">
+              <label class="not-checkbox" for="exclude-checkbox-11">Horror</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-12" value="" onclick="excludeGenrePush('exclude-checkbox-12', '15')">
+              <label class="not-checkbox" for="exclude-checkbox-12">Kids</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-13" value="" onclick="excludeGenrePush('exclude-checkbox-13', '16')">
+              <label class="not-checkbox" for="exclude-checkbox-13">Magic</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-14" value="" onclick="excludeGenrePush('exclude-checkbox-14', '17')">
+              <label class="not-checkbox" for="exclude-checkbox-14">Martial Arts</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-15" value="" onclick="excludeGenrePush('exclude-checkbox-15', '18')">
+              <label class="not-checkbox" for="exclude-checkbox-15">Mecha</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-16" value="" onclick="excludeGenrePush('exclude-checkbox-16', '19')">
+              <label class="not-checkbox" for="exclude-checkbox-16">Music</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-4" value="" onclick="excludeGenrePush('exclude-checkbox-4', '7')">
+              <label class="not-checkbox" for="exclude-checkbox-4">Mystery</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-17" value="" onclick="excludeGenrePush('exclude-checkbox-17', '40')">
+              <label class="not-checkbox" for="exclude-checkbox-17">Psychological</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-18" value="" onclick="excludeGenrePush('exclude-checkbox-18', '22')">
+              <label class="not-checkbox" for="exclude-checkbox-18">Romance</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-19" value="" onclick="excludeGenrePush('exclude-checkbox-19', '23')">
+              <label class="not-checkbox" for="exclude-checkbox-19">School</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-20" value="" onclick="excludeGenrePush('exclude-checkbox-20', '24')">
+              <label class="not-checkbox" for="exclude-checkbox-20">Sci Fi</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-21" value="" onclick="excludeGenrePush('exclude-checkbox-21', '42')">
+              <label class="not-checkbox" for="exclude-checkbox-21">Seinen</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-22" value="" onclick="excludeGenrePush('exclude-checkbox-22', '25')">
+              <label class="not-checkbox" for="exclude-checkbox-22">Shoujo</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-23" value="" onclick="excludeGenrePush('exclude-checkbox-23', '27')">
+              <label class="not-checkbox" for="exclude-checkbox-23">Shounen</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-24" value="" onclick="excludeGenrePush('exclude-checkbox-24', '29')">
+              <label class="not-checkbox" for="exclude-checkbox-24">Space</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-25" value="" onclick="excludeGenrePush('exclude-checkbox-25', '30')">
+              <label class="not-checkbox" for="exclude-checkbox-25">Sports</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-26" value="" onclick="excludeGenrePush('exclude-checkbox-26', '31')">
+              <label class="not-checkbox" for="exclude-checkbox-26">Super Power</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-27" value="" onclick="excludeGenrePush('exclude-checkbox-27', '36')">
+              <label class="not-checkbox" for="exclude-checkbox-27">Slice Of Life</label>
+            </div>
+            <div class="custom-checkbox d-inline-block">
+              <input type="checkbox" id="exclude-checkbox-28" value="" onclick="excludeGenrePush('exclude-checkbox-28', '41')">
+              <label class="not-checkbox" for="exclude-checkbox-28">Thriller</label>
+            </div>
+          </div>
+          <a class="expand-2" href="#">
+            <div >
+              <img class="opacity" src="down-arrow-2.svg" alt="">
+            </div>
+          </a>
           <select class="form-control form-control-lg" id="select-2">
             <option value="" selected="selected" disabled="disabled">TV or Movie?</option>
             <option value="tv">TV</option>

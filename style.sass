@@ -2,6 +2,7 @@
   --white-bg-color: #eee !important
   --lm-button-bg-color: #ddd !important
   --lm-input-bg-color: #ddd !important
+  --dm-checkbox-border-color-checked: #eb4b4b !important
 
 .content-wrapper
   display: flex
@@ -19,6 +20,7 @@ div.container-2
   width: 400px
   max-width: none
   margin-top: 50px
+  margin-bottom: 50px
 
 div.container
   display: flex
@@ -70,7 +72,7 @@ h1.results
 label.content-title
   font-weight: 400
 
-.container-2>label.content-title
+.container-2>label.content-title, h2.content-title
   align-self: flex-start
 
 p.score
@@ -130,15 +132,62 @@ button.add-minus-btn
   align-self: flex-start
   margin-bottom: 25px
 
-.checkbox-container
+.checkbox-container, .checkbox-container-2
   display: flex
   flex-wrap: wrap
+  height: 45px
+  overflow: hidden
+
+.height-auto
+  height: auto
 
 .custom-checkbox
   margin: 0px 10px 10px 20px
   position: relative
   right: 10px
 
+.unchecker
+  flex: 1 0 100%
+
+.expand, .expand-2
+  width: 100%
+  height: 40px
+  background: rgb(37, 40, 44)
+  background: linear-gradient(180deg, rgba(37, 40, 44, 0) 0%, rgba(37, 40, 44, 1) 50%, rgba(37, 40, 44, 0) 100%)
+  margin-bottom: -20px
+  position: relative
+  bottom: 40px
+  display: flex
+  justify-content: center
+
+.checkbox-container label:before
+  --dm-checkbox-border-color-checked: rgb(24, 144, 255)
+
+.not-checkbox:before
+  background-color: transparent !important
+
+.checkbox-container-2 label.not-checkbox:before
+  border-color: #eb4b4b
+
+.checkbox-container-2 label.not-checkbox:after
+  border: none
+  content: "–"
+  -webkit-transform: none
+  color: #eb4b4b
+  transform: none
+  top: -1.5px
+  left: 7px
+  font-weight: 600
+
+
+.rotate-180
+  transform: rotate(180deg)
+
+.opacity
+  position: relative
+  top: 15px
+  opacity: .75
+  transition: transform .5s
 
 @media (max-width: 480px)
   select.form-control
@@ -177,11 +226,11 @@ button.add-minus-btn
   .date-wrapper
     width: calc(100% - 40px)
 
-  .custom-switch
+  .container-2>label.content-title, h2.content-title, .custom-switch
     margin-left: 20px
 
-  .container-2>label.content-title
-    margin-left: 20px
+  .checkbox-container, .checkbox-container-2
+    width: calc(100% - 40px)
 
   button.btn-primary
     width: calc(100% - 40px)
@@ -200,3 +249,7 @@ button.add-minus-btn
 
   .from-to-wrapper>label
     margin-bottom: 0px
+
+@media (max-width: 1599px)
+  .checkbox-container-2 label.not-checkbox:after
+    left: 5.5px
