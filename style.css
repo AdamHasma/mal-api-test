@@ -156,7 +156,7 @@ button.add-minus-btn {
 
 @media (max-width: 480px) {
   select.form-control {
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
     line-height: normal;
   }
 
@@ -167,11 +167,11 @@ button.add-minus-btn {
     align-items: center;
     width: 100%;
     max-width: none;
-    margin-top: 50px;
+    margin-top: 25px;
   }
 
   select#multi-select-3 {
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
     display: table-row;
     min-height: unset;
   }
@@ -195,11 +195,38 @@ button.add-minus-btn {
   }
 
   .date-wrapper {
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
   }
 
   .custom-switch {
-    margin-left: 10px;
+    margin-left: 20px;
+  }
+
+  .container-2 > label.content-title {
+    margin-left: 20px;
+  }
+
+  button.btn-primary {
+    width: calc(100% - 40px);
+    padding: 5px 15px;
+    height: auto;
+  }
+
+  .btn-wrapper {
+    width: unset;
+    margin-left: 0px;
+  }
+
+  .date-wrapper > .from-to-wrapper:not(:first-child) {
+    justify-content: flex-end;
+  }
+
+  .date-select {
+    font-size: 18px;
+  }
+
+  .from-to-wrapper > label {
+    margin-bottom: 0px;
   }
 }
 

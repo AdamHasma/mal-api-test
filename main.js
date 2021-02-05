@@ -1,8 +1,12 @@
-const cardContainer = document.querySelector(".card-container");
 const apiUrl = "https://api.jikan.moe/v3"
+
 const scoreSelect = document.getElementById("multi-select-3");
+const scoreOptions = document.querySelectorAll("#multi-select-3>option");
+const scoreLabel = document.querySelector(".score-label");
 const genreSelect = document.getElementById("select-1");
 const typeSelect = document.getElementById("select-2");
+
+const cardContainer = document.querySelector(".card-container");
 const contentWrapper = document.querySelector(".content-wrapper");
 const dateWrapper = document.querySelector(".date-wrapper");
 const btn = document.querySelector(".btn-primary");
@@ -42,6 +46,47 @@ toggle.addEventListener("click", function() {
     toggle.innerText = "💡";
   }
 })
+
+
+
+scoreOptions[0].addEventListener("click", () => {
+  scoreLabel.innerText = `Score range of 1 - 10`
+})
+
+scoreOptions[1].addEventListener("click", () => {
+  scoreLabel.innerText = `Score range of 2 - 10`
+})
+
+scoreOptions[2].addEventListener("click", () => {
+  scoreLabel.innerText = `Score range of 3 - 10`
+})
+
+scoreOptions[3].addEventListener("click", () => {
+  scoreLabel.innerText = `Score range of 4 - 10`
+})
+
+scoreOptions[4].addEventListener("click", () => {
+  scoreLabel.innerText = `Score range of 5 - 10`
+})
+
+scoreOptions[5].addEventListener("click", () => {
+  scoreLabel.innerText = `Score range of 6 - 10`
+})
+
+scoreOptions[6].addEventListener("click", () => {
+  scoreLabel.innerText = `Score range of 7 - 10`
+})
+
+scoreOptions[7].addEventListener("click", () => {
+  scoreLabel.innerText = `Score range of 8 - 10`
+})
+
+scoreOptions[8].addEventListener("click", () => {
+  scoreLabel.innerText = `Score range of 9 - 10`
+})
+
+
+
 
 const booleanChange = () => {
   if (status === "") {
@@ -104,15 +149,15 @@ plusTo5.addEventListener("click", function() {
 });
 
 minusTo5.addEventListener("click", function() {
-    if (endDate.value > "1921") {
-  changeValueEnd(-5);
-    }
+  if (endDate.value > "1921") {
+    changeValueEnd(-5);
+  }
 });
 
 minusTo1.addEventListener("click", function() {
-    if (endDate.value > "1917") {
-  changeValueEnd(-1);
-    }
+  if (endDate.value > "1917") {
+    changeValueEnd(-1);
+  }
 });
 // CHANGING END VALUE END
 
