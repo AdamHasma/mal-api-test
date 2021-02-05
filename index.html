@@ -14,80 +14,96 @@
   <div class="page-wrapper">
     <div class="content-wrapper">
       <div class="container">
-        <h1 class="title">Easy Peasy Anime Search</h1>
-        <label class="content-title" for="multi-select-3">Exclude anime under a score of...</label>
-        <select class="form-control" id="multi-select-3" multiple="multiple" size="1">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-        </select>
-        <select class="form-control form-control-lg" id="select-1">
-          <option value="" selected="selected" disabled="disabled">Select a genre</option>
-          <option value="1">Action</option>
-          <option value="2">Adventure</option>
-          <option value="4">Comedy</option>
-          <option value="7">Mystery</option>
-          <option value="8">Drama</option>
-          <option value="9">Ecchi</option>
-          <option value="2">Fantasy</option>
-          <option value="11">Game</option>
-          <option value="35">Harem</option>
-          <option value="13">Historical</option>
-          <option value="14">Horror</option>
-          <option value="15">Kids</option>
-          <option value="16">Magic</option>
-          <option value="17">Martial Arts</option>
-          <option value="18">Mecha</option>
-          <option value="19">Music</option>
-          <option value="40">Psychological</option>
-          <option value="22">Romance</option>
-          <option value="23">School</option>
-          <option value="24">Sci Fi</option>
-          <option value="42">Seinen</option>
-          <option value="25">Shoujo</option>
-          <option value="27">Shounen</option>
-          <option value="29">Space</option>
-          <option value="30">Sports</option>
-          <option value="31">Super Power</option>
-          <option value="36">Slice Of Life</option>
-          <option value="41">Thriller</option>
-        </select>
+        <button class="btn toggle" type="button" onclick="halfmoon.toggleDarkMode()">💡</button>
+        <h1 class="title mb-0">Easy Peasy Anime Search</h1>
+        <p class="text-xl mt-0 mb-20 text-muted">Results are sorted starting from the best score</p>
+        <div class="container-2">
+          <label class="content-title" for="multi-select-3">Exclude anime under a score of...</label>
+          <select class="form-control" id="multi-select-3" multiple="multiple" size="1">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+          <select class="form-control form-control-lg" id="select-1">
+            <option value="" selected="selected" disabled="disabled">Select a genre</option>
+            <option value="1">Action</option>
+            <option value="2">Adventure</option>
+            <option value="4">Comedy</option>
+            <option value="7">Mystery</option>
+            <option value="8">Drama</option>
+            <option value="9">Ecchi</option>
+            <option value="2">Fantasy</option>
+            <option value="11">Game</option>
+            <option value="35">Harem</option>
+            <option value="13">Historical</option>
+            <option value="14">Horror</option>
+            <option value="15">Kids</option>
+            <option value="16">Magic</option>
+            <option value="17">Martial Arts</option>
+            <option value="18">Mecha</option>
+            <option value="19">Music</option>
+            <option value="40">Psychological</option>
+            <option value="22">Romance</option>
+            <option value="23">School</option>
+            <option value="24">Sci Fi</option>
+            <option value="42">Seinen</option>
+            <option value="25">Shoujo</option>
+            <option value="27">Shounen</option>
+            <option value="29">Space</option>
+            <option value="30">Sports</option>
+            <option value="31">Super Power</option>
+            <option value="36">Slice Of Life</option>
+            <option value="41">Thriller</option>
+          </select>
 
-        <select class="form-control form-control-lg" id="select-2">
-          <option value="" selected="selected" disabled="disabled">TV or Movie?</option>
-          <option value="tv">TV</option>
-          <option value="movie">Movie</option>
-        </select>
-        <button class="btn btn-primary" type="button">Show me!</button>
-
-        <!-- Card -->
-        <div class="card-container">
-          <!-- <div class="mw-full">
-            <div class="card p-0">
-              <img src="https://placehold.it/225x319" class="img-fluid rounded-top" alt="...">
-              <p class="score font-size-12 text-monospace">Score: 6.83</p>
-              <div class="content">
-                <h2 class="content-title">
-                  Naruto
-                </h2>
-                <p class="text-muted">
-                  Very Long text. Very Long text. Very Long text. Very Long text. Very Long text. Very Long text. Very Long text. Very Long text. Very Long text. Very Long text.
-                </p>
-                <div class="text-right">
-                  <a href="${data.results[i].url}" target="_blank" class="btn">Go To MAL</a>
-                </div>
+          <select class="form-control form-control-lg" id="select-2">
+            <option value="" selected="selected" disabled="disabled">TV or Movie?</option>
+            <option value="tv">TV</option>
+            <option value="movie">Movie</option>
+          </select>
+          <div class="date-wrapper">
+            <div class="from-to-wrapper">
+              <label class="content-title" for="multi-select-3">From:</label>
+              <input id="start-date" class="date-select form-control" type="text" min="1950" max="2021" value="1950">
+              <div class="btn-wrapper">
+                <button id="plus-from-1" class="btn add-minus-btn" type="button" name="button">+1</button>
+                <button id="minus-from-1" class="btn add-minus-btn" type="button" name="button">–1</button>
+                <button id="plus-from-5" class="btn add-minus-btn" type="button" name="button">+5</button>
+                <button id="minus-from-5" class="btn add-minus-btn" type="button" name="button">–5</button>
               </div>
             </div>
-          </div> -->
+            <div class="from-to-wrapper">
+              <label class="content-title" for="multi-select-3">To:</label>
+              <input id="end-date" class="date-select form-control" type="text" min="1950" max="2021" value="2021">
+              <div class="btn-wrapper">
+                <button id="plus-to-1" class="btn add-minus-btn" type="button" name="button">+1</button>
+                <button id="minus-to-1" class="btn add-minus-btn" type="button" name="button">–1</button>
+                <button id="plus-to-5" class="btn add-minus-btn" type="button" name="button">+5</button>
+                <button id="minus-to-5" class="btn add-minus-btn" type="button" name="button">–5</button>
+              </div>
+            </div>
+          </div>
+          <div class="custom-switch">
+            <input type="checkbox" id="switch-1" value="" onclick="booleanChange()">
+            <label for="switch-1">Only show completed ones</label>
+          </div>
+          <button class="btn btn-primary" type="button">Show me!</button>
+        </div>
+
+        <h1 class="content-title results"></h1>
+        <!-- Cards -->
+        <div class="card-container">
+
         </div>
       </div>
     </div>
+  </div>
   </div>
 
   </div>

@@ -1,11 +1,24 @@
+:root
+  --white-bg-color: #eee !important
+  --lm-button-bg-color: #ddd !important
+  --lm-input-bg-color: #ddd !important
+
 .content-wrapper
   display: flex
   align-items: center
   flex-direction: column
 
 select.form-control
-  width: 400px
   line-height: normal
+
+div.container-2
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  width: 400px
+  max-width: none
+  margin-top: 50px
 
 div.container
   display: flex
@@ -17,7 +30,6 @@ div.container
   margin-top: 50px
 
 select#multi-select-3
-  width: 400px
   display: table-row
   min-height: unset
 
@@ -30,7 +42,7 @@ select#multi-select-3
   text-align: center
   vertical-align: middle
 
-.container>select
+.container-2>select
   margin-bottom: 25px
 
 .mw-full
@@ -52,15 +64,76 @@ select#multi-select-3
   text-align: center
   margin-bottom: 50px
 
+h1.results
+  margin-top: 50px
+
 label.content-title
   font-weight: 400
+
+p.score
+  position: absolute
+  left: 36px
+  bottom: 28px
+  margin-top: 44px
+  opacity: .6
+
+input.date-select
+  display: inline-block
+  width: 3.4em
+  appearance: none
+  -webkit-appearance: none
+  -moz-appearance: none
+
+button.add-minus-btn
+  font-size: 12px
+  font-weight: 600
+  width: 35px
+  height: 25px
+  padding: 0px
+  line-height: 1
+  marg
+
+.btn-wrapper
+  display: inline-block
+  width: 75px
+
+.btn-wrapper>button
+  margin: 2px 0px
+  opacity: .5
+
+.btn-wrapper>button:hover, .btn-wrapper>button:focus
+  opacity: 1
+
+.date-wrapper
+  width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 25px
+
+.from-to-wrapper>input, .btn-wrapper
+  margin-left: 5px
+
+.date-wrapper>label:not(:first-child)
+  margin-left: 50px
+
+.from-to-wrapper
+  width: auto
+  display: flex
+  flex-wrap: wrap
+  // justify-content: center
+  align-items: center
+
+.custom-switch
+  align-self: flex-start
+  margin-bottom: 25px
 
 @media (max-width: 480px)
   select.form-control
     width: calc(100% - 20px)
     line-height: normal
 
-  div.container
+  div.container, div.container-2
     display: flex
     flex-direction: column
     justify-content: center
@@ -88,3 +161,9 @@ label.content-title
     display: table-cell
     width: 30px
     padding: 7px 12px
+
+  .date-wrapper
+    width: calc(100% - 20px)
+
+  .custom-switch
+    margin-left: 10px
