@@ -83,6 +83,10 @@ label.content-title {
   font-weight: 400;
 }
 
+.container-2 > label.content-title {
+  align-self: flex-start;
+}
+
 p.score {
   position: absolute;
   left: 36px;
@@ -107,6 +111,7 @@ button.add-minus-btn {
   padding: 0px;
   line-height: 1;
 }
+
 .btn-wrapper {
   display: inline-block;
   width: 75px;

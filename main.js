@@ -27,11 +27,13 @@ let endDateValue = 2021;
 // HTML Basic Structure START
 
 btn.addEventListener("click", getPosts);
-contentWrapper.addEventListener('click', function(e) {
-  if (scoreSelect.contains(e.target) || btn.contains(e.target) || typeSelect.contains(e.target) || genreSelect.contains(e.target) || dateWrapper.contains(e.target)) {} else {
-    scoreSelect.selectedIndex = "-1";
-  }
-});
+
+//DESELECT FUNCTION FOR SCORESELECT
+// contentWrapper.addEventListener('click', function(e) {
+//   if (scoreSelect.contains(e.target) || btn.contains(e.target) || typeSelect.contains(e.target) || genreSelect.contains(e.target) || dateWrapper.contains(e.target)) {} else {
+//     scoreSelect.selectedIndex = "-1";
+//   }
+// });
 
 toggle.addEventListener("click", function() {
   if (toggle.innerText === "💡") {
@@ -41,7 +43,7 @@ toggle.addEventListener("click", function() {
   }
 })
 
-const booleanChange = () =>{
+const booleanChange = () => {
   if (status === "") {
     status = "completed";
     console.log(status);
@@ -58,21 +60,25 @@ const changeValueFrom = num => {
 };
 
 plusFrom1.addEventListener("click", function() {
-  changeValueFrom(1);
+  if (startDate.value < "2021") {
+    changeValueFrom(1);
+  }
 });
 
 plusFrom5.addEventListener("click", function() {
-  changeValueFrom(5);
+  if (startDate.value < "2017") {
+    changeValueFrom(5);
+  }
 });
 
 minusFrom5.addEventListener("click", function() {
-  if (startDate.value > "1954") {
+  if (startDate.value > "1921") {
     changeValueFrom(-5);
   }
 });
 
 minusFrom1.addEventListener("click", function() {
-  if (startDate.value > "1950") {
+  if (startDate.value > "1917") {
     changeValueFrom(-1);
   }
 });
@@ -98,11 +104,15 @@ plusTo5.addEventListener("click", function() {
 });
 
 minusTo5.addEventListener("click", function() {
+    if (endDate.value > "1921") {
   changeValueEnd(-5);
+    }
 });
 
 minusTo1.addEventListener("click", function() {
+    if (endDate.value > "1917") {
   changeValueEnd(-1);
+    }
 });
 // CHANGING END VALUE END
 
@@ -117,6 +127,7 @@ async function getPosts() {
 
   let html = '';
   cardContainer.innerHTML = '';
+  document.querySelector(".results-container").innerHTML = '';
   for (let i = 0, len = data.results.length; i < len; i++) {
     let htmlSegment =
       `   <div class="mw-full">
@@ -139,10 +150,15 @@ async function getPosts() {
 
     html += htmlSegment;
   }
-  document.querySelector(".results").innerText = "Results";
+  document.querySelector(".results-container").innerHTML +=
+    `
+  <h1 class="content-title results mb-0">Results</h1>
+  <p class="text-xl mt-0 mb-0 text-muted">Results are sorted starting from the best score</p>
+  `;
+
   cardContainer.innerHTML += html;
 };
 
 function getURL() {
-  console.log(`${apiUrl}/search/anime?genre=${genreSelect.value}&type=${typeSelect.value}&score=${scoreSelect.value}&order_by=score&sort=desc`)
+  console.log(`${apiUrl}/search/anime?genre=${genreSelect.value}&type=${typeSelect.value}&score=${scoreSelect.value}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`)
 }

@@ -16,7 +16,6 @@
       <div class="container">
         <button class="btn toggle" type="button" onclick="halfmoon.toggleDarkMode()">💡</button>
         <h1 class="title mb-0">Easy Peasy Anime Search</h1>
-        <p class="text-xl mt-0 mb-20 text-muted">Results are sorted starting from the best score</p>
         <div class="container-2">
           <label class="content-title" for="multi-select-3">Exclude anime under a score of...</label>
           <select class="form-control" id="multi-select-3" multiple="multiple" size="1">
@@ -70,7 +69,7 @@
           <div class="date-wrapper">
             <div class="from-to-wrapper">
               <label class="content-title" for="multi-select-3">From:</label>
-              <input id="start-date" class="date-select form-control" type="text" min="1950" max="2021" value="1950">
+              <input id="start-date" class="date-select form-control" type="text" min="1917" max="2021" value="1980">
               <div class="btn-wrapper">
                 <button id="plus-from-1" class="btn add-minus-btn" type="button" name="button">+1</button>
                 <button id="minus-from-1" class="btn add-minus-btn" type="button" name="button">–1</button>
@@ -80,7 +79,7 @@
             </div>
             <div class="from-to-wrapper">
               <label class="content-title" for="multi-select-3">To:</label>
-              <input id="end-date" class="date-select form-control" type="text" min="1950" max="2021" value="2021">
+              <input id="end-date" class="date-select form-control" type="text" min="1918" max="2021" value="2021">
               <div class="btn-wrapper">
                 <button id="plus-to-1" class="btn add-minus-btn" type="button" name="button">+1</button>
                 <button id="minus-to-1" class="btn add-minus-btn" type="button" name="button">–1</button>
@@ -95,8 +94,10 @@
           </div>
           <button class="btn btn-primary" type="button">Show me!</button>
         </div>
+        <div class="results-container text-center">
 
-        <h1 class="content-title results"></h1>
+        </div>
+
         <!-- Cards -->
         <div class="card-container">
 
