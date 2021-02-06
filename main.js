@@ -5,8 +5,13 @@ const scoreLabel = document.querySelector(".score-label");
 const genreSelect = document.getElementById("select-1");
 const typeSelect = document.getElementById("select-2");
 
-const unchecker = document.getElementById("checkbox-0");
 const checkboxes = document.querySelectorAll(".checkbox-container>.custom-checkbox:not(:first-child)>input");
+const checkboxes2 = document.querySelectorAll(".checkbox-container-2>.custom-checkbox:not(:first-child)>input");
+const checkboxContainer = document.querySelector(".checkbox-container");
+const checkboxContainer2 = document.querySelector(".checkbox-container-2");
+
+const includeNote = document.querySelector(".include-note");
+const excludeNote = document.querySelector(".exclude-note");
 
 const cardContainer = document.querySelector(".card-container");
 const contentWrapper = document.querySelector(".content-wrapper");
@@ -30,7 +35,6 @@ const endDate = document.getElementById("end-date");
 let endDateValue = 2021;
 
 let genreArray = [];
-
 let excludeGenreArray = [];
 
 
@@ -45,13 +49,40 @@ btn.addEventListener("click", getPosts);
 //   }
 // });
 
-toggle.addEventListener("click", function() {
-  if (toggle.innerText === "💡") {
-    toggle.innerText = "🌑";
-  } else {
-    toggle.innerText = "💡";
+//OLD LIGHT MODE SWITCHER
+// toggle.addEventListener("click", function() {
+//   if (toggle.innerText === "💡") {
+//     toggle.innerText = "🌑";
+//   } else {
+//     toggle.innerText = "💡";
+//   }
+// })
+
+const includeRadio = () => {
+  excludeGenreArray = [];
+  checkboxContainer.style.display = "flex";
+  checkboxContainer2.style.display = "none";
+  if (includeNote.classList.contains("invisible")) {
+    includeNote.classList.toggle("invisible")
+    excludeNote.classList.toggle("invisible")
   }
-})
+  for (let i = 0, len = checkboxes2.length; i < len; i++) {
+    checkboxes2[i].checked = false;
+  }
+}
+
+const excludeRadio = () => {
+  genreArray = [];
+  checkboxContainer.style.display = "none";
+  checkboxContainer2.style.display = "flex";
+  if (excludeNote.classList.contains("invisible")) {
+    includeNote.classList.toggle("invisible")
+    excludeNote.classList.toggle("invisible")
+  }
+  for (let i = 0, len = checkboxes.length; i < len; i++) {
+    checkboxes[i].checked = false;
+  }
+}
 
 const excludeGenrePush = (id, string) => {
   if (document.getElementById(id).checked === true) {
@@ -78,34 +109,6 @@ const genrePush = (id, string) => {
 const changeLabel = num => {
   scoreLabel.innerText = `Score range of ${num} - 10`
 }
-
-const uncheckFunction = () => {
-  if (unchecker.checked === false) {
-    console.log("you unchecked it")
-    genreArray = ["??$$%?%^"];
-    for (let i = 0, len = checkboxes.length; i < len; i++) {
-      checkboxes[i].checked = false;
-    }
-  } else if (unchecker.checked === true) {
-    console.log("you checked it")
-    genreArray = ["1", "2", "4", "7", "8", "9", "10", "11", "35", "13", "14", "15", "16", "17", "18", "19", "40", "22", "23", "24", "42", "25", "27", "29", "30", "31", "36", "41"]
-    for (let i = 0, len = checkboxes.length; i < len; i++) {
-      checkboxes[i].checked = true;
-    }
-  }
-}
-
-document.querySelector(".expand").addEventListener("click", () =>{
-  document.querySelector(".checkbox-container").classList.toggle("height-auto");
-  // document.querySelector(".expand").style.bottom = '30px';
-  document.querySelector(".expand img").classList.toggle("rotate-180");
-})
-
-document.querySelector(".expand-2").addEventListener("click", () =>{
-  document.querySelector(".checkbox-container-2").classList.toggle("height-auto");
-  // document.querySelector(".expand-2").style.bottom = '30px';
-  document.querySelector(".expand-2 img").classList.toggle("rotate-180");
-})
 
 const booleanChange = () => {
   if (status === "") {

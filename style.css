@@ -56,14 +56,19 @@ select#multi-select-3 {
   margin-bottom: 25px;
 }
 
+.align-self {
+  align-self: flex-start;
+  margin-left: 7px;
+}
+
 .mw-full {
   width: 460px;
 }
 
-.img-fluid {
+img.img-fluid {
   object-fit: cover;
   width: 100%;
-  height: 500px !important;
+  height: 500px;
 }
 
 .card-container {
@@ -160,8 +165,11 @@ button.add-minus-btn {
 .checkbox-container, .checkbox-container-2 {
   display: flex;
   flex-wrap: wrap;
-  height: 45px;
-  overflow: hidden;
+  height: auto;
+}
+
+.checkbox-container-2 {
+  display: none;
 }
 
 .height-auto {
@@ -172,22 +180,6 @@ button.add-minus-btn {
   margin: 0px 10px 10px 20px;
   position: relative;
   right: 10px;
-}
-
-.unchecker {
-  flex: 1 0 100%;
-}
-
-.expand, .expand-2 {
-  width: 100%;
-  height: 40px;
-  background: #25282c;
-  background: linear-gradient(180deg, rgba(37, 40, 44, 0) 0%, #25282c 50%, rgba(37, 40, 44, 0) 100%);
-  margin-bottom: -20px;
-  position: relative;
-  bottom: 40px;
-  display: flex;
-  justify-content: center;
 }
 
 .checkbox-container label:before {
@@ -224,10 +216,27 @@ button.add-minus-btn {
   transition: transform 0.5s;
 }
 
+.radio-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  align-self: flex-start;
+  width: 100%;
+}
+
 @media (max-width: 480px) {
   select.form-control {
     width: calc(100% - 40px);
     line-height: normal;
+  }
+
+  .radio-container {
+    width: calc(100% - 40px);
+    align-self: unset;
+  }
+
+  .align-self {
+    margin-left: 25px;
   }
 
   div.container, div.container-2 {
@@ -246,8 +255,13 @@ button.add-minus-btn {
     min-height: unset;
   }
 
-  .mw-full {
+  div.mw-full {
+    width: calc(100% - 40px);
+  }
+
+  div.card.p-0 {
     width: 100%;
+    margin: 20px auto 0px auto;
   }
 
   p.score {
@@ -300,6 +314,18 @@ button.add-minus-btn {
   }
 }
 @media (max-width: 1599px) {
+  div.card {
+    margin: 2rem;
+  }
+
+  img.img-fluid {
+    height: 300px;
+  }
+
+  .mw-full {
+    width: 380px;
+  }
+
   .checkbox-container-2 label.not-checkbox:after {
     left: 5.5px;
   }
