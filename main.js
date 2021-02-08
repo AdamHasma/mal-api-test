@@ -36,6 +36,8 @@ let endDateValue = 2021;
 
 let genreArray = [];
 let excludeGenreArray = [];
+let excludeUrl = ``
+let includeUrl = ``
 
 
 // HTML Basic Structure START
@@ -62,6 +64,7 @@ const includeRadio = () => {
   excludeGenreArray = [];
   checkboxContainer.style.display = "flex";
   checkboxContainer2.style.display = "none";
+  excludeUrl = ``;
   if (includeNote.classList.contains("invisible")) {
     includeNote.classList.toggle("invisible")
     excludeNote.classList.toggle("invisible")
@@ -75,9 +78,10 @@ const excludeRadio = () => {
   genreArray = [];
   checkboxContainer.style.display = "none";
   checkboxContainer2.style.display = "flex";
+  includeUrl = ``;
   if (excludeNote.classList.contains("invisible")) {
-    includeNote.classList.toggle("invisible")
-    excludeNote.classList.toggle("invisible")
+    includeNote.classList.toggle("invisible");
+    excludeNote.classList.toggle("invisible");
   }
   for (let i = 0, len = checkboxes.length; i < len; i++) {
     checkboxes[i].checked = false;
@@ -187,7 +191,13 @@ minusTo1.addEventListener("click", function() {
 
 // Fetching Data
 async function getPosts() {
-  const response = await fetch(`${apiUrl}/search/anime?genre=${genreArray.join(',')}&genre_exclude=${excludeGenreArray.join(',')}&type=${typeSelect.value}&score=${scoreSelect.value}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`);
+  if (excludeNote.classList.contains("invisible")) {
+    includeUrl = `genre=${genreArray.join(',')}`;
+  } else if (includeNote.classList.contains("invisible")) {
+    excludeUrl = `&genre=${excludeGenreArray.join(',')}&genre_exclude=0`;
+  }
+  
+  const response = await fetch(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreSelect.value}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`);
   getURL();
   const data = await response.json();
   console.log(data);
@@ -235,5 +245,5 @@ async function getPosts() {
 };
 
 function getURL() {
-  console.log(`${apiUrl}/search/anime?genre=${genreArray.join(',')}&genre_exclude=${excludeGenreArray.join(',')}&type=${typeSelect.value}&score=${scoreSelect.value}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`)
+  console.log(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreSelect.value}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`)
 }
