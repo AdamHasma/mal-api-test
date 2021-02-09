@@ -111,7 +111,7 @@ const genrePush = (id, string) => {
   }
 }
 
-const changeLabel = num => {
+const setScoreValue = num => {
   scoreLabel.innerText = `Score range of ${num} - 10`
   scoreValue = num;
 }
