@@ -127,6 +127,12 @@ button.add-minus-btn {
   line-height: 1;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .btn-wrapper {
   display: inline-block;
   width: 75px;
@@ -294,7 +300,7 @@ button.add-minus-btn {
     margin-left: 0;
   }
 
-  .checkbox-container, .checkbox-container-2, .date-wrapper, div.btn-group.w-full, button.btn-primary, .div.mw-full, .radio-container, select.form-control, select#multi-select-3, div.card-container {
+  .checkbox-container, .checkbox-container-2, .date-wrapper, div.btn-group.w-full, button.btn-primary, .div.mw-full, .radio-container, select.form-control, select#multi-select-3, div.card-container, p.subtitle, img.logo {
     width: calc(100% - 40px) !important;
   }
 
