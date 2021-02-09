@@ -43,6 +43,12 @@ let includeUrl = ``
 
 // HTML Basic Structure START
 
+window.addEventListener("load", () => {
+  if (document.body.classList.contains("dark-mode") === false) {
+    document.querySelector("img.w-400").src = 'logo-light-mode.svg'
+  }
+})
+
 btn.addEventListener("click", getPosts);
 
 //DESELECT FUNCTION FOR SCORESELECT
