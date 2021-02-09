@@ -17,48 +17,18 @@
         <h1 class="title mb-0">Easy Peasy Anime Search</h1>
         <div class="container-2">
           <label class="content-title score-label" for="multi-select-3">Score range of 1 - 10</label>
-          <select class="form-control" id="multi-select-3" multiple="multiple" size="1">
-            <option value="1" onclick="changeLabel(1)" selected>1</option>
-            <option value="2" onclick="changeLabel(2)">2</option>
-            <option value="3" onclick="changeLabel(3)">3</option>
-            <option value="4" onclick="changeLabel(4)">4</option>
-            <option value="5" onclick="changeLabel(5)">5</option>
-            <option value="6" onclick="changeLabel(6)">6</option>
-            <option value="7" onclick="changeLabel(7)">7</option>
-            <option value="8" onclick="changeLabel(8)">8</option>
-            <option value="9" onclick="changeLabel(9)">9</option>
-          </select>
-          <!-- <select class="form-control form-control-lg" id="select-1">
-            <option value="" selected="selected" disabled="disabled">Select a genre</option>
-            <option value="1">Action</option>
-            <option value="2">Adventure</option>
-            <option value="4">Comedy</option>
-            <option value="7">Mystery</option>
-            <option value="8">Drama</option>
-            <option value="9">Ecchi</option>
-            <option value="2">Fantasy</option>
-            <option value="11">Game</option>
-            <option value="35">Harem</option>
-            <option value="13">Historical</option>
-            <option value="14">Horror</option>
-            <option value="15">Kids</option>
-            <option value="16">Magic</option>
-            <option value="17">Martial Arts</option>
-            <option value="18">Mecha</option>
-            <option value="19">Music</option>
-            <option value="40">Psychological</option>
-            <option value="22">Romance</option>
-            <option value="23">School</option>
-            <option value="24">Sci Fi</option>
-            <option value="42">Seinen</option>
-            <option value="25">Shoujo</option>
-            <option value="27">Shounen</option>
-            <option value="29">Space</option>
-            <option value="30">Sports</option>
-            <option value="31">Super Power</option>
-            <option value="36">Slice Of Life</option>
-            <option value="41">Thriller</option>
-          </select> -->
+          <div class="btn-group w-full mb-20" role="group" id="multi-select-3">
+            <button class="btn btn-square" value="1" onclick="changeLabel(1)" selected>1</button>
+            <button class="btn btn-square" value="2" onclick="changeLabel(2)">2</button>
+            <button class="btn btn-square" value="3" onclick="changeLabel(3)">3</button>
+            <button class="btn btn-square" value="4" onclick="changeLabel(4)">4</button>
+            <button class="btn btn-square" value="5" onclick="changeLabel(5)">5</button>
+            <button class="btn btn-square" value="6" onclick="changeLabel(6)">6</button>
+            <button class="btn btn-square" value="7" onclick="changeLabel(7)">7</button>
+            <button class="btn btn-square" value="8" onclick="changeLabel(8)">8</button>
+            <button class="btn btn-square" value="9" onclick="changeLabel(9)">9</button>
+          </div>
+
           <!-- Horizontally stacked radio buttons -->
           <div class="radio-container">
             <div class="ml-5 mb-0 custom-radio d-inline-block mr-10">
@@ -304,7 +274,7 @@
             </div>
           </div>
           <select class="form-control form-control-lg" id="select-2">
-            <option value="" selected="selected" disabled="disabled">TV or Movie?</option>
+            <option value="" selected="selected">Both TV and Movie</option>
             <option value="tv">TV</option>
             <option value="movie">Movie</option>
           </select>

@@ -75,6 +75,7 @@ img.img-fluid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .title {
@@ -226,17 +227,23 @@ button.add-minus-btn {
 
 @media (max-width: 480px) {
   select.form-control {
-    width: calc(100% - 40px);
     line-height: normal;
   }
 
   .radio-container {
-    width: calc(100% - 40px);
     align-self: unset;
   }
 
   .align-self {
     margin-left: 25px;
+  }
+
+  div.card-container {
+    margin-bottom: 25px;
+  }
+
+  div.container-2 {
+    margin-bottom: 0px;
   }
 
   div.container, div.container-2 {
@@ -250,13 +257,8 @@ button.add-minus-btn {
   }
 
   select#multi-select-3 {
-    width: calc(100% - 40px);
     display: table-row;
     min-height: unset;
-  }
-
-  div.mw-full {
-    width: calc(100% - 40px);
   }
 
   div.card.p-0 {
@@ -278,20 +280,19 @@ button.add-minus-btn {
     padding: 7px 12px;
   }
 
-  .date-wrapper {
-    width: calc(100% - 40px);
-  }
-
   .container-2 > label.content-title, h2.content-title, .custom-switch {
     margin-left: 20px;
   }
 
-  .checkbox-container, .checkbox-container-2 {
-    width: calc(100% - 40px);
+  div.content > .content-title {
+    margin-left: 0;
+  }
+
+  .checkbox-container, .checkbox-container-2, .date-wrapper, div.btn-group.w-full, button.btn-primary, .div.mw-full, .radio-container, select.form-control, select#multi-select-3, div.card-container {
+    width: calc(100% - 40px) !important;
   }
 
   button.btn-primary {
-    width: calc(100% - 40px);
     padding: 5px 15px;
     height: auto;
   }

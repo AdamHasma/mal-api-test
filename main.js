@@ -2,14 +2,15 @@ const apiUrl = "https://api.jikan.moe/v3"
 
 const scoreSelect = document.getElementById("multi-select-3");
 const scoreLabel = document.querySelector(".score-label");
-const genreSelect = document.getElementById("select-1");
+let scoreValue = 0;
+
 const typeSelect = document.getElementById("select-2");
 
+const genreSelect = document.getElementById("select-1");
 const checkboxes = document.querySelectorAll(".checkbox-container>.custom-checkbox:not(:first-child)>input");
 const checkboxes2 = document.querySelectorAll(".checkbox-container-2>.custom-checkbox:not(:first-child)>input");
 const checkboxContainer = document.querySelector(".checkbox-container");
 const checkboxContainer2 = document.querySelector(".checkbox-container-2");
-
 const includeNote = document.querySelector(".include-note");
 const excludeNote = document.querySelector(".exclude-note");
 
@@ -112,6 +113,7 @@ const genrePush = (id, string) => {
 
 const changeLabel = num => {
   scoreLabel.innerText = `Score range of ${num} - 10`
+  scoreValue = num;
 }
 
 const booleanChange = () => {
@@ -196,8 +198,8 @@ async function getPosts() {
   } else if (includeNote.classList.contains("invisible")) {
     excludeUrl = `&genre=${excludeGenreArray.join(',')}&genre_exclude=0`;
   }
-  
-  const response = await fetch(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreSelect.value}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`);
+
+  const response = await fetch(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreValue}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`);
   getURL();
   const data = await response.json();
   console.log(data);
@@ -239,11 +241,11 @@ async function getPosts() {
     document.querySelector(".results-container").innerHTML +=
       `
     <h1 class="content-title results mb-0">Oopsie Doopsie</h1>
-    <p class="text-xl mt-0 mb-0 text-muted">No results were found!</p>
+    <p class="text-xl mt-0 text-muted">No results were found!</p>
     `;
   }
 };
 
 function getURL() {
-  console.log(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreSelect.value}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`)
+  console.log(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreValue}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`)
 }
