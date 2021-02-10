@@ -1,5 +1,7 @@
 const apiUrl = "https://api.jikan.moe/v3"
 
+// const container2 = document.querySelector(".container-2 *");
+
 const scoreSelect = document.getElementById("multi-select-3");
 const scoreLabel = document.querySelector(".score-label");
 let scoreValue = 0;
@@ -14,6 +16,7 @@ const checkboxContainer2 = document.querySelector(".checkbox-container-2");
 const includeNote = document.querySelector(".include-note");
 const excludeNote = document.querySelector(".exclude-note");
 
+const cardContainerPlaceholder = document.querySelector(".card-container-placeholder");
 const cardContainer = document.querySelector(".card-container");
 const contentWrapper = document.querySelector(".content-wrapper");
 const dateWrapper = document.querySelector(".date-wrapper");
@@ -205,14 +208,17 @@ async function getPosts() {
     excludeUrl = `&genre=${excludeGenreArray.join(',')}&genre_exclude=0`;
   }
 
-  const response = await fetch(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreValue}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`);
+  cardContainerPlaceholder.style.display = "flex"
+  btn.setAttribute("disabled", true);
+
+  const response = await fetch(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreValue}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc`);
   getURL();
   const data = await response.json();
   console.log(data);
 
   let html = '';
-  cardContainer.innerHTML = '';
   document.querySelector(".results-container").innerHTML = '';
+  cardContainer.innerHTML = '';
   try {
     for (let i = 0, len = data.results.length; i < len; i++) {
       let htmlSegment =
@@ -242,16 +248,20 @@ async function getPosts() {
     <p class="text-xl mt-0 mb-0 text-muted">Results are sorted starting from the best score</p>
     `;
 
+    cardContainerPlaceholder.style.display = "none"
     cardContainer.innerHTML += html;
+    btn.removeAttribute("disabled");
   } catch (err) {
     document.querySelector(".results-container").innerHTML +=
       `
     <h1 class="content-title results mb-0">Oopsie Doopsie</h1>
-    <p class="text-xl mt-0 text-muted">No results were found!</p>
+    <p class="text-xl mt-0 text-muted mb-50">No results were found!</p>
     `;
+    cardContainerPlaceholder.style.display = "none"
+    btn.removeAttribute("disabled");
   }
 };
 
 function getURL() {
-  console.log(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreValue}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc&limit=25`)
+  console.log(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreValue}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc`)
 }
