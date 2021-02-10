@@ -4,6 +4,13 @@
   --lm-input-bg-color: #ddd !important
   --dm-checkbox-border-color-checked: #eb4b4b !important
 
+
+@keyframes load
+  0%
+    left: -80px
+  100%
+    left: 100%
+
 .content-wrapper
   display: flex
   align-items: center
@@ -21,6 +28,7 @@ div.container-2
   max-width: none
   margin-top: 50px
   margin-bottom: 50px
+
 
 div.container
   display: flex
@@ -84,12 +92,16 @@ label.content-title
 .container-2>label.content-title, h2.content-title
   align-self: flex-start
 
-p.score
+p.score, div.score
   position: absolute
   left: 36px
   bottom: 28px
   margin-top: 44px
   opacity: .6
+
+div.score
+  bottom: 50px
+  opacity: 1
 
 input.date-select
   display: inline-block
@@ -135,6 +147,9 @@ footer
 .date-wrapper>label:not(:first-child)
   margin-left: 50px
 
+.mb-50
+  margin-bottom: 50px
+
 .from-to-wrapper
   width: auto
   display: flex
@@ -156,6 +171,46 @@ footer
 
 .height-auto
   height: auto
+
+.card-container-placeholder
+  display: none
+
+.title-placeholder
+  height: 25px
+
+.title-placeholder-2
+  height: 25px
+
+.p-placeholder
+  height: 15px
+
+.score-placeholder
+  height: 10px
+
+a.button-placeholder
+  color: #25282c !important
+  cursor: default !important
+  pointer-events: none
+  user-select: none
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+
+.image-placeholder
+  width: 100%
+  height: 500px
+  background-color: #202326
+
+.image-placeholder::before
+  content: ''
+  display: block
+  position: absolute
+  top: 0
+  left: -110px
+  height: 100%
+  width: 100px
+  background: linear-gradient(to right, transparent 0%, #25282c 50%, transparent 100%)
+  animation: load 1s cubic-bezier(0.4, 0.0, 0.2, 1) infinite
+
 
 .custom-checkbox
   margin: 0px 10px 10px 20px
@@ -202,6 +257,9 @@ footer
 // MOBILE VIEW
 @media (max-width: 480px)
 
+  .image-placeholder
+    height: 350px
+
   select.form-control
     line-height: normal
 
@@ -233,8 +291,9 @@ footer
   div.card.p-0
     width: 100%
     margin: 20px auto 0px auto
+    overflow: hidden
 
-  p.score
+  p.score, div.score
     position: absolute
     left: 20px
     bottom: 14px
@@ -272,8 +331,17 @@ footer
   .from-to-wrapper>label
     margin-bottom: 0px
 
+  div.score
+    bottom: 30px !important
+
 
 @media (max-width: 1599px)
+  .image-placeholder
+    height: 400px
+
+  div.score
+    bottom: 40px
+
   div.card
     margin: 2rem
 
