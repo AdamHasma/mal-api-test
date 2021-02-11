@@ -4,6 +4,9 @@
   --lm-button-bg-color: #ddd !important;
   --lm-input-bg-color: #ddd !important;
   --dm-checkbox-border-color-checked: #eb4b4b !important;
+  --content-title-font-size: 1.8rem !important;
+  --base-font-size: 1.26rem !important;
+  --collapse-header-padding-with-bg-image: 1.1rem 1.8rem 1.1rem 3.96rem !important;
 }
 
 @keyframes load {
@@ -14,6 +17,10 @@
     left: 100%;
   }
 }
+.content-wrapper {
+  scroll-behavior: smooth;
+}
+
 .content-wrapper {
   display: flex;
   align-items: center;
@@ -29,8 +36,9 @@ div.container-2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
-  max-width: none;
+  min-width: 400px;
+  width: 60vw;
+  max-width: 800px;
   margin-top: 50px;
   margin-bottom: 50px;
 }
@@ -77,13 +85,13 @@ footer {
 }
 
 .mw-full {
-  width: 460px;
+  width: 400px;
 }
 
 img.img-fluid {
   object-fit: cover;
   width: 100%;
-  height: 500px;
+  height: 420px;
 }
 
 .card-container {
@@ -106,13 +114,17 @@ label.content-title {
   font-weight: 400;
 }
 
+div.content {
+  margin: 2.5rem;
+}
+
 .container-2 > label.content-title, h2.content-title {
   align-self: flex-start;
 }
 
 p.score, div.score {
   position: absolute;
-  left: 36px;
+  left: 38px;
   bottom: 28px;
   margin-top: 44px;
   opacity: 0.6;
@@ -148,7 +160,7 @@ footer {
 
 .btn-wrapper {
   display: inline-block;
-  width: 75px;
+  width: auto;
 }
 
 .btn-wrapper > button {
@@ -208,6 +220,11 @@ footer {
 
 .card-container-placeholder {
   display: none;
+  justify-content: center;
+}
+
+#cards-section {
+  width: 100%;
 }
 
 .title-placeholder {
@@ -253,12 +270,6 @@ a.button-placeholder {
   animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-.custom-checkbox {
-  margin: 0px 10px 10px 20px;
-  position: relative;
-  right: 10px;
-}
-
 .checkbox-container label:before {
   --dm-checkbox-border-color-checked: rgb(24, 144, 255);
 }
@@ -301,7 +312,46 @@ a.button-placeholder {
   width: 100%;
 }
 
-@media (max-width: 480px) {
+.checkbox-title {
+  margin-left: 40px;
+}
+
+.custom-checkbox {
+  margin: 10px 0px 0px 20px;
+}
+
+div.genre-group {
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0px 20px 10px 0px;
+}
+
+summary.collapse-header {
+  border: none;
+}
+
+details.collapse-panel {
+  margin-bottom: 30px;
+}
+
+div.collapse-content {
+  padding: 0;
+  border: none;
+  margin: 0.5rem 0 0 auto;
+  width: calc(100% - 5px);
+}
+
+@media (max-width: 768px) {
+  body {
+    --content-title-font-size: 2rem;
+    --base-font-size: 1.4rem;
+    --collapse-header-padding-with-bg-image: 1.2rem 2rem 1.2rem 4.4rem;
+  }
+
+  details.collapse-panel * {
+    font-size: 14px;
+  }
+
   .image-placeholder {
     height: 350px;
   }
@@ -314,16 +364,22 @@ a.button-placeholder {
     align-self: unset;
   }
 
+  button.btn-primary {
+    width: 100%;
+  }
+
   .align-self {
     margin-left: 25px;
   }
 
   div.card-container {
-    margin-bottom: 25px;
+    margin: 0px auto 20px;
+    flex-wrap: wrap;
   }
 
   div.container-2 {
     margin-bottom: 0px;
+    min-width: unset;
   }
 
   div.container, div.container-2 {
@@ -349,8 +405,8 @@ a.button-placeholder {
 
   p.score, div.score {
     position: absolute;
-    left: 20px;
-    bottom: 14px;
+    left: 28px;
+    bottom: 18px;
     margin-top: 44px;
     opacity: 0.6;
   }
@@ -369,8 +425,17 @@ a.button-placeholder {
     margin-left: 0;
   }
 
-  .checkbox-container, .checkbox-container-2, .date-wrapper, div.btn-group.w-full, button.btn-primary, .div.mw-full, .radio-container, select.form-control, select#multi-select-3, div.card-container, p.subtitle, img.logo {
+  .checkbox-container, .checkbox-container-2, .date-wrapper, div.btn-group.w-full, .a-btn, .radio-container, select.form-control, select#multi-select-3, div.card-container, p.subtitle, img.logo, .card-container-placeholder {
     width: calc(100% - 40px) !important;
+  }
+
+  .card-container-placeholder {
+    margin: auto;
+    flex-wrap: wrap;
+  }
+
+  .div.mw-full {
+    width: 100%;
   }
 
   button.btn-primary {
@@ -398,6 +463,14 @@ a.button-placeholder {
   div.score {
     bottom: 30px !important;
   }
+
+  .custom-checkbox {
+    margin-left: 15px;
+  }
+
+  div.genre-group {
+    margin-bottom: 8px;
+  }
 }
 @media (max-width: 1599px) {
   .image-placeholder {
@@ -422,6 +495,19 @@ a.button-placeholder {
 
   .checkbox-container-2 label.not-checkbox:after {
     left: 5.5px;
+  }
+}
+@media (min-width: 1921px) {
+  div.container-2 {
+    width: 1000px;
+  }
+
+  .custom-checkbox {
+    width: auto;
+  }
+
+  .btn-wrapper {
+    width: auto;
   }
 }
 

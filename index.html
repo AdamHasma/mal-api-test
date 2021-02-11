@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NeedAni.me</title>
+  <title>👉👈 NeedAni.me</title>
   <meta name="og:description" content="NeedAni.me makes it easy for you to find a new anime you want to watch by using Jikan's API. New Features will be added by time, so don't forget to bookmark it!">
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet">
@@ -15,7 +15,7 @@
   <link rel="manifest" href="favicon/site.webmanifest">
 </head>
 
-<body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true" data-set-preferred-mode-onload="true">
+<body class="dark-mode with-custom-webkit-scrollbars with-custom-css-scrollbars">
   <div class="page-wrapper">
     <div class="content-wrapper">
       <div class="container">
@@ -52,122 +52,281 @@
           </div>
 
           <div class="checkbox-container mb-20">
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-1" value="" onclick="genrePush('checkbox-1', '1')">
-              <label for="checkbox-1">Action</label>
+            <div class="w-full mb-5 genre-group border rounded d-flex">
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-12" value="" onclick="genrePush('checkbox-12', '15')">
+                <label for="checkbox-12">Kids</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-22" value="" onclick="genrePush('checkbox-22', '25')">
+                <label for="checkbox-22">Shoujo</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-23" value="" onclick="genrePush('checkbox-23', '27')">
+                <label for="checkbox-23">Shounen</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-21" value="" onclick="genrePush('checkbox-21', '42')">
+                <label for="checkbox-21">Seinen</label>
+              </div>
             </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-2" value="" onclick="genrePush('checkbox-2', '2')">
-              <label for="checkbox-2">Adventure</label>
+
+            <div class="w-full mb-5 genre-group border rounded d-flex">
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-7" value="" onclick="genrePush('checkbox-7', '10')">
+                <label for="checkbox-7">Fantasy</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-8" value="" onclick="genrePush('checkbox-8', '11')">
+                <label for="checkbox-8">Game</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-13" value="" onclick="genrePush('checkbox-13', '16')">
+                <label for="checkbox-13">Magic</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-15" value="" onclick="genrePush('checkbox-15', '18')">
+                <label for="checkbox-15">Mecha</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-20" value="" onclick="genrePush('checkbox-20', '24')">
+                <label for="checkbox-20">Sci Fi</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-26" value="" onclick="genrePush('checkbox-26', '31')">
+                <label for="checkbox-26">Super Power</label>
+              </div>
             </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-3" value="" onclick="genrePush('checkbox-3', '4')">
-              <label for="checkbox-3">Comedy</label>
+
+            <div class="w-full mb-5 genre-group border rounded d-flex">
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-11" value="" onclick="genrePush('checkbox-11', '14')">
+                <label for="checkbox-11">Horror</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-4" value="" onclick="genrePush('checkbox-4', '7')">
+                <label for="checkbox-4">Mystery</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-17" value="" onclick="genrePush('checkbox-17', '40')">
+                <label for="checkbox-17">Psychological</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-28" value="" onclick="genrePush('checkbox-28', '41')">
+                <label for="checkbox-28">Thriller</label>
+              </div>
             </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-5" value="" onclick="genrePush('checkbox-5', '8')">
-              <label for="checkbox-5">Drama</label>
+
+            <div class="w-full mb-5 genre-group border rounded d-flex">
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-1" value="" onclick="genrePush('checkbox-1', '1')">
+                <label for="checkbox-1">Action</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-14" value="" onclick="genrePush('checkbox-14', '17')">
+                <label for="checkbox-14">Martial Arts</label>
+              </div>
             </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-6" value="" onclick="genrePush('checkbox-6', '9')">
-              <label for="checkbox-6">Ecchi</label>
+
+            <div class="w-full mb-5 genre-group border rounded d-flex">
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-2" value="" onclick="genrePush('checkbox-2', '2')">
+                <label for="checkbox-2">Adventure</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-10" value="" onclick="genrePush('checkbox-10', '13')">
+                <label for="checkbox-10">Historical</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-24" value="" onclick="genrePush('checkbox-24', '29')">
+                <label for="checkbox-24">Space</label>
+              </div>
             </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-7" value="" onclick="genrePush('checkbox-7', '10')">
-              <label for="checkbox-7">Fantasy</label>
+
+            <div class="w-full mb-5 genre-group border rounded d-flex">
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-3" value="" onclick="genrePush('checkbox-3', '4')">
+                <label for="checkbox-3">Comedy</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-5" value="" onclick="genrePush('checkbox-5', '8')">
+                <label for="checkbox-5">Drama</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-16" value="" onclick="genrePush('checkbox-16', '19')">
+                <label for="checkbox-16">Music</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-19" value="" onclick="genrePush('checkbox-19', '23')">
+                <label for="checkbox-19">School</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-25" value="" onclick="genrePush('checkbox-25', '30')">
+                <label for="checkbox-25">Sports</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-27" value="" onclick="genrePush('checkbox-27', '36')">
+                <label for="checkbox-27">Slice Of Life</label>
+              </div>
             </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-8" value="" onclick="genrePush('checkbox-8', '11')">
-              <label for="checkbox-8">Game</label>
+
+            <div class="w-full mb-5 genre-group border rounded d-flex">
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-6" value="" onclick="genrePush('checkbox-6', '9')">
+                <label for="checkbox-6">Ecchi</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-9" value="" onclick="genrePush('checkbox-9', '35')">
+                <label for="checkbox-9">Harem</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="checkbox-18" value="" onclick="genrePush('checkbox-18', '22')">
+                <label for="checkbox-18">Romance</label>
+              </div>
             </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-9" value="" onclick="genrePush('checkbox-9', '35')">
-              <label for="checkbox-9">Harem</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-10" value="" onclick="genrePush('checkbox-10', '13')">
-              <label for="checkbox-10">Historical</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-11" value="" onclick="genrePush('checkbox-11', '14')">
-              <label for="checkbox-11">Horror</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-12" value="" onclick="genrePush('checkbox-12', '15')">
-              <label for="checkbox-12">Kids</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-13" value="" onclick="genrePush('checkbox-13', '16')">
-              <label for="checkbox-13">Magic</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-14" value="" onclick="genrePush('checkbox-14', '17')">
-              <label for="checkbox-14">Martial Arts</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-15" value="" onclick="genrePush('checkbox-15', '18')">
-              <label for="checkbox-15">Mecha</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-16" value="" onclick="genrePush('checkbox-16', '19')">
-              <label for="checkbox-16">Music</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-4" value="" onclick="genrePush('checkbox-4', '7')">
-              <label for="checkbox-4">Mystery</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-17" value="" onclick="genrePush('checkbox-17', '40')">
-              <label for="checkbox-17">Psychological</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-18" value="" onclick="genrePush('checkbox-18', '22')">
-              <label for="checkbox-18">Romance</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-19" value="" onclick="genrePush('checkbox-19', '23')">
-              <label for="checkbox-19">School</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-20" value="" onclick="genrePush('checkbox-20', '24')">
-              <label for="checkbox-20">Sci Fi</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-21" value="" onclick="genrePush('checkbox-21', '42')">
-              <label for="checkbox-21">Seinen</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-22" value="" onclick="genrePush('checkbox-22', '25')">
-              <label for="checkbox-22">Shoujo</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-23" value="" onclick="genrePush('checkbox-23', '27')">
-              <label for="checkbox-23">Shounen</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-24" value="" onclick="genrePush('checkbox-24', '29')">
-              <label for="checkbox-24">Space</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-25" value="" onclick="genrePush('checkbox-25', '30')">
-              <label for="checkbox-25">Sports</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-26" value="" onclick="genrePush('checkbox-26', '31')">
-              <label for="checkbox-26">Super Power</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-27" value="" onclick="genrePush('checkbox-27', '36')">
-              <label for="checkbox-27">Slice Of Life</label>
-            </div>
-            <div class="custom-checkbox d-inline-block">
-              <input type="checkbox" id="checkbox-28" value="" onclick="genrePush('checkbox-28', '41')">
-              <label for="checkbox-28">Thriller</label>
-            </div>
+
           </div>
 
           <!-- SECOND CHECKBOX CONTAINER -->
           <div class="checkbox-container-2 mb-20">
+            <div class="w-full mb-5 genre-group border rounded d-flex">
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-12" value="" onclick="excludeGenrePush('exclude-checkbox-12', '15')">
+                <label class="not-checkbox" for="exclude-checkbox-12">Kids</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-22" value="" onclick="excludeGenrePush('exclude-checkbox-22', '25')">
+                <label class="not-checkbox" for="exclude-checkbox-22">Shoujo</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-23" value="" onclick="excludeGenrePush('exclude-checkbox-23', '27')">
+                <label class="not-checkbox" for="exclude-checkbox-23">Shounen</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-21" value="" onclick="excludeGenrePush('exclude-checkbox-21', '42')">
+                <label class="not-checkbox" for="exclude-checkbox-21">Seinen</label>
+              </div>
+            </div>
+
+            <div class="w-full mb-5 genre-group border rounded d-flex">
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-7" value="" onclick="excludeGenrePush('exclude-checkbox-7', '10')">
+                <label class="not-checkbox" for="exclude-checkbox-7">Fantasy</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-8" value="" onclick="excludeGenrePush('exclude-checkbox-8', '11')">
+                <label class="not-checkbox" for="exclude-checkbox-8">Game</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-13" value="" onclick="excludeGenrePush('exclude-checkbox-13', '16')">
+                <label class="not-checkbox" for="exclude-checkbox-13">Magic</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-15" value="" onclick="excludeGenrePush('exclude-checkbox-15', '18')">
+                <label class="not-checkbox" for="exclude-checkbox-15">Mecha</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-20" value="" onclick="excludeGenrePush('exclude-checkbox-20', '24')">
+                <label class="not-checkbox" for="exclude-checkbox-20">Sci Fi</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-26" value="" onclick="excludeGenrePush('exclude-checkbox-26', '31')">
+                <label class="not-checkbox" for="exclude-checkbox-26">Super Power</label>
+              </div>
+            </div>
+
+            <div class="w-full mb-5 genre-group border rounded d-flex">
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-11" value="" onclick="excludeGenrePush('exclude-checkbox-11', '14')">
+                <label class="not-checkbox" for="exclude-checkbox-11">Horror</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-4" value="" onclick="excludeGenrePush('exclude-checkbox-4', '7')">
+                <label class="not-checkbox" for="exclude-checkbox-4">Mystery</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-17" value="" onclick="excludeGenrePush('exclude-checkbox-17', '40')">
+                <label class="not-checkbox" for="exclude-checkbox-17">Psychological</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-28" value="" onclick="excludeGenrePush('exclude-checkbox-28', '41')">
+                <label class="not-checkbox" for="exclude-checkbox-28">Thriller</label>
+              </div>
+            </div>
+
+            <div class="w-full mb-5 genre-group border rounded d-flex">
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-1" value="" onclick="excludeGenrePush('exclude-checkbox-1', '1')">
+                <label class="not-checkbox" for="exclude-checkbox-1">Action</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-14" value="" onclick="excludeGenrePush('exclude-checkbox-14', '17')">
+                <label class="not-checkbox" for="exclude-checkbox-14">Martial Arts</label>
+              </div>
+            </div>
+
+            <div class="w-full mb-5 genre-group border rounded d-flex">
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-2" value="" onclick="excludeGenrePush('exclude-checkbox-2', '2')">
+                <label class="not-checkbox" for="exclude-checkbox-2">Adventure</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-10" value="" onclick="excludeGenrePush('exclude-checkbox-10', '13')">
+                <label class="not-checkbox" for="exclude-checkbox-10">Historical</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-24" value="" onclick="excludeGenrePush('exclude-checkbox-24', '29')">
+                <label class="not-checkbox" for="exclude-checkbox-24">Space</label>
+              </div>
+            </div>
+
+            <div class="w-full mb-5 genre-group border rounded d-flex">
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-3" value="" onclick="excludeGenrePush('exclude-checkbox-3', '4')">
+                <label class="not-checkbox" for="exclude-checkbox-3">Comedy</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-5" value="" onclick="excludeGenrePush('exclude-checkbox-5', '8')">
+                <label class="not-checkbox" for="exclude-checkbox-5">Drama</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-16" value="" onclick="excludeGenrePush('exclude-checkbox-16', '19')">
+                <label class="not-checkbox" for="exclude-checkbox-16">Music</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-19" value="" onclick="excludeGenrePush('exclude-checkbox-19', '23')">
+                <label class="not-checkbox" for="exclude-checkbox-19">School</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-25" value="" onclick="excludeGenrePush('exclude-checkbox-25', '30')">
+                <label class="not-checkbox" for="exclude-checkbox-25">Sports</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-27" value="" onclick="excludeGenrePush('exclude-checkbox-27', '36')">
+                <label class="not-checkbox" for="exclude-checkbox-27">Slice Of Life</label>
+              </div>
+            </div>
+
+            <div class="w-full mb-5 genre-group border rounded d-flex">
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-6" value="" onclick="excludeGenrePush('exclude-checkbox-6', '9')">
+                <label class="not-checkbox" for="exclude-checkbox-6">Ecchi</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-9" value="" onclick="excludeGenrePush('exclude-checkbox-9', '35')">
+                <label class="not-checkbox" for="exclude-checkbox-9">Harem</label>
+              </div>
+              <div class="custom-checkbox d-inline-block">
+                <input type="checkbox" id="exclude-checkbox-18" value="" onclick="excludeGenrePush('exclude-checkbox-18', '22')">
+                <label class="not-checkbox" for="exclude-checkbox-18">Romance</label>
+              </div>
+            </div>
+
+          </div>
+
+
+          <!-- OLD SECOND CHECKBOX CONTAINER -->
+          <!-- <div class="checkbox-container-2 mb-20">
             <div class="custom-checkbox d-inline-block">
               <input type="checkbox" id="exclude-checkbox-1" value="" onclick="excludeGenrePush('exclude-checkbox-1', '1')">
               <label class="not-checkbox" for="exclude-checkbox-1">Action</label>
@@ -280,9 +439,9 @@
               <input type="checkbox" id="exclude-checkbox-28" value="" onclick="excludeGenrePush('exclude-checkbox-28', '41')">
               <label class="not-checkbox" for="exclude-checkbox-28">Thriller</label>
             </div>
-          </div>
+          </div> -->
           <select class="form-control form-control-lg" id="select-2">
-            <option value="" selected="selected">Both TV and Movie</option>
+            <option value="tv,movie" selected="selected">Both TV and Movie</option>
             <option value="tv">TV</option>
             <option value="movie">Movie</option>
           </select>
@@ -292,9 +451,9 @@
               <input id="start-date" class="date-select form-control" type="text" min="1917" max="2021" value="1980">
               <div class="btn-wrapper">
                 <button id="plus-from-1" class="btn add-minus-btn" type="button" name="button">+1</button>
-                <button id="minus-from-1" class="btn add-minus-btn" type="button" name="button">–1</button>
+                <button id="minus-from-1" class="btn add-minus-btn" type="button" name="button">&minus;1</button>
                 <button id="plus-from-5" class="btn add-minus-btn" type="button" name="button">+5</button>
-                <button id="minus-from-5" class="btn add-minus-btn" type="button" name="button">–5</button>
+                <button id="minus-from-5" class="btn add-minus-btn" type="button" name="button">&minus;5</button>
               </div>
             </div>
             <div class="from-to-wrapper">
@@ -302,9 +461,9 @@
               <input id="end-date" class="date-select form-control" type="text" min="1918" max="2021" value="2021">
               <div class="btn-wrapper">
                 <button id="plus-to-1" class="btn add-minus-btn" type="button" name="button">+1</button>
-                <button id="minus-to-1" class="btn add-minus-btn" type="button" name="button">–1</button>
+                <button id="minus-to-1" class="btn add-minus-btn" type="button" name="button">&minus;1</button>
                 <button id="plus-to-5" class="btn add-minus-btn" type="button" name="button">+5</button>
-                <button id="minus-to-5" class="btn add-minus-btn" type="button" name="button">–5</button>
+                <button id="minus-to-5" class="btn add-minus-btn" type="button" name="button">&minus;5</button>
               </div>
             </div>
           </div>
@@ -312,76 +471,105 @@
             <input type="checkbox" id="switch-1" value="" onclick="booleanChange()">
             <label for="switch-1">Only show completed ones</label>
           </div>
-          <button class="btn btn-primary" type="button">Show me!</button>
+          <a class="a-btn" href="#cards-section"><button class="btn btn-primary" type="button">Show me!</button></a>
         </div>
-        <div class="results-container text-center">
+        <section id="cards-section">
+          <div class="results-container text-center">
 
-        </div>
+          </div>
 
-        <!-- Cards -->
-        <div class="card-container-placeholder">
-          <div class="mw-full">
-            <div class="card-placeholder card p-0">
-              <div src="https://placehold.it/225x319" class="image-placeholder rounded-top"></div>
-              <div class="score score-placeholder w-quarter bg-dark-light"></div>
-              <div class="content">
-                <div class="w-full title-placeholder bg-dark-light mb-10"></div>
-                <div class="w-three-quarter title-placeholder-2 bg-dark-light mb-20"></div>
-                <div class="w-full p-placeholder bg-dark-light mb-5"></div>
-                <div class="w-full p-placeholder bg-dark-light mb-5"></div>
-                <div class="w-full p-placeholder bg-dark-light mb-5"></div>
-                <div class="w-full p-placeholder bg-dark-light mb-5"></div>
-                <div class="w-three-quarter p-placeholder bg-dark-light mb-5"></div>
-                <div class="w-quarter p-placeholder bg-dark-light mb-20"></div>
-                <div class="text-right">
-                  <a href="#" class="btn button-placeholder">Go To MAL</a>
+          <!-- Cards -->
+
+          <div class="card-container-placeholder">
+            <div class="mw-full">
+              <div class="card-placeholder card p-0">
+                <div src="https://placehold.it/225x319" class="image-placeholder rounded-top"></div>
+                <div class="score score-placeholder w-quarter bg-dark-light"></div>
+                <div class="content">
+                  <div class="w-full title-placeholder bg-dark-light mb-10"></div>
+                  <div class="w-three-quarter title-placeholder-2 bg-dark-light mb-20"></div>
+                  <div class="w-full p-placeholder bg-dark-light mb-5"></div>
+                  <div class="w-full p-placeholder bg-dark-light mb-5"></div>
+                  <div class="w-full p-placeholder bg-dark-light mb-5"></div>
+                  <div class="w-full p-placeholder bg-dark-light mb-5"></div>
+                  <div class="w-three-quarter p-placeholder bg-dark-light mb-5"></div>
+                  <div class="w-quarter p-placeholder bg-dark-light mb-20"></div>
+                  <div class="text-right">
+                    <a href="#" class="btn button-placeholder">Go To MAL</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mw-full">
+              <div class="card-placeholder card p-0">
+                <div src="https://placehold.it/225x319" class="image-placeholder rounded-top"></div>
+                <div class="score score-placeholder w-quarter bg-dark-light"></div>
+                <div class="content">
+                  <div class="w-full title-placeholder bg-dark-light mb-10"></div>
+                  <div class="w-three-quarter title-placeholder-2 bg-dark-light mb-20"></div>
+                  <div class="w-full p-placeholder bg-dark-light mb-5"></div>
+                  <div class="w-full p-placeholder bg-dark-light mb-5"></div>
+                  <div class="w-full p-placeholder bg-dark-light mb-5"></div>
+                  <div class="w-full p-placeholder bg-dark-light mb-5"></div>
+                  <div class="w-three-quarter p-placeholder bg-dark-light mb-5"></div>
+                  <div class="w-quarter p-placeholder bg-dark-light mb-20"></div>
+                  <div class="text-right">
+                    <a href="#" class="btn button-placeholder">Go To MAL</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mw-full">
+              <div class="card-placeholder card p-0">
+                <div src="https://placehold.it/225x319" class="image-placeholder rounded-top"></div>
+                <div class="score score-placeholder w-quarter bg-dark-light"></div>
+                <div class="content">
+                  <div class="w-full title-placeholder bg-dark-light mb-10"></div>
+                  <div class="w-three-quarter title-placeholder-2 bg-dark-light mb-20"></div>
+                  <div class="w-full p-placeholder bg-dark-light mb-5"></div>
+                  <div class="w-full p-placeholder bg-dark-light mb-5"></div>
+                  <div class="w-full p-placeholder bg-dark-light mb-5"></div>
+                  <div class="w-full p-placeholder bg-dark-light mb-5"></div>
+                  <div class="w-three-quarter p-placeholder bg-dark-light mb-5"></div>
+                  <div class="w-quarter p-placeholder bg-dark-light mb-20"></div>
+                  <div class="text-right">
+                    <a href="#" class="btn button-placeholder">Go To MAL</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="mw-full">
-            <div class="card-placeholder card p-0">
-              <div src="https://placehold.it/225x319" class="image-placeholder rounded-top"></div>
-              <div class="score score-placeholder w-quarter bg-dark-light"></div>
-              <div class="content">
-                <div class="w-full title-placeholder bg-dark-light mb-10"></div>
-                <div class="w-three-quarter title-placeholder-2 bg-dark-light mb-20"></div>
-                <div class="w-full p-placeholder bg-dark-light mb-5"></div>
-                <div class="w-full p-placeholder bg-dark-light mb-5"></div>
-                <div class="w-full p-placeholder bg-dark-light mb-5"></div>
-                <div class="w-full p-placeholder bg-dark-light mb-5"></div>
-                <div class="w-three-quarter p-placeholder bg-dark-light mb-5"></div>
-                <div class="w-quarter p-placeholder bg-dark-light mb-20"></div>
-                <div class="text-right">
-                  <a href="#" class="btn button-placeholder">Go To MAL</a>
+
+          <div class="card-container">
+            <div class="mw-full">
+              <div class="card p-0">
+                <img src="https://cdn.myanimelist.net/images/anime/1223/96541.jpg?s=faffcb677a5eacd17bf761edd78bfb3f" class="img-fluid rounded-top" alt="...">
+                <p class="score font-size-12 text-monospace">Score: 9.2</p>
+                <div class="content">
+                  <h2 class="content-title mb-10">
+                    Fullmetal Alchemist: Brotherhood
+                  </h2>
+                  <details class="collapse-panel w-400 mw-full">
+                    <summary class="collapse-header">
+                      Description
+                    </summary>
+                    <div class="collapse-content">
+                      "In order for something to be obtained, something of equal value must be lost." Alchemy is bound by this Law of Equivalent Exchange—something the young brothers Edward and Alphonse Elric only realize...
+                    </div>
+                  </details>
+                  <p class="text-muted">
+
+                  </p>
+                  <div class="text-right">
+                    <a href="https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood" target="_blank" class="btn">Go To MAL</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="mw-full">
-            <div class="card-placeholder card p-0">
-              <div src="https://placehold.it/225x319" class="image-placeholder rounded-top"></div>
-              <div class="score score-placeholder w-quarter bg-dark-light"></div>
-              <div class="content">
-                <div class="w-full title-placeholder bg-dark-light mb-10"></div>
-                <div class="w-three-quarter title-placeholder-2 bg-dark-light mb-20"></div>
-                <div class="w-full p-placeholder bg-dark-light mb-5"></div>
-                <div class="w-full p-placeholder bg-dark-light mb-5"></div>
-                <div class="w-full p-placeholder bg-dark-light mb-5"></div>
-                <div class="w-full p-placeholder bg-dark-light mb-5"></div>
-                <div class="w-three-quarter p-placeholder bg-dark-light mb-5"></div>
-                <div class="w-quarter p-placeholder bg-dark-light mb-20"></div>
-                <div class="text-right">
-                  <a href="#" class="btn button-placeholder">Go To MAL</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="card-container">
-        </div>
 
+        </section>
         <footer>
           <a class="text-center" href="https://adamh.de" target="_blank">Portfolio</a>
           <p class="text-muted mt-0">Discord: cocos#2051</p>
