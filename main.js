@@ -9,8 +9,8 @@ let scoreValue = 0;
 const typeSelect = document.getElementById("select-2");
 
 const genreSelect = document.getElementById("select-1");
-const checkboxes = document.querySelectorAll(".checkbox-container>.custom-checkbox:not(:first-child)>input");
-const checkboxes2 = document.querySelectorAll(".checkbox-container-2>.custom-checkbox:not(:first-child)>input");
+const checkboxes = document.querySelectorAll(".checkbox-container .custom-checkbox:not(:first-child)>input");
+const checkboxes2 = document.querySelectorAll(".checkbox-container-2 .custom-checkbox:not(:first-child)>input");
 const checkboxContainer = document.querySelector(".checkbox-container");
 const checkboxContainer2 = document.querySelector(".checkbox-container-2");
 const includeNote = document.querySelector(".include-note");
@@ -40,17 +40,11 @@ let endDateValue = 2021;
 
 let genreArray = [];
 let excludeGenreArray = [];
-let excludeUrl = ``
-let includeUrl = ``
+let excludeUrl = ``;
+let includeUrl = ``;
 
 
 // HTML Basic Structure START
-
-window.addEventListener("load", () => {
-  if (document.body.classList.contains("dark-mode") === false) {
-    document.querySelector("img.w-400").src = 'logo-light-mode.svg'
-  }
-})
 
 btn.addEventListener("click", getPosts);
 
@@ -210,6 +204,7 @@ async function getPosts() {
 
   cardContainerPlaceholder.style.display = "flex"
   btn.setAttribute("disabled", true);
+  cardContainer.innerHTML = '';
 
   const response = await fetch(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreValue}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc`);
   getURL();
@@ -218,7 +213,6 @@ async function getPosts() {
 
   let html = '';
   document.querySelector(".results-container").innerHTML = '';
-  cardContainer.innerHTML = '';
   try {
     for (let i = 0, len = data.results.length; i < len; i++) {
       let htmlSegment =
@@ -230,8 +224,16 @@ async function getPosts() {
                   <h2 class="content-title">
                     ${data.results[i].title}
                   </h2>
+                  <details class="collapse-panel w-400 mw-full">
+                    <summary class="collapse-header">
+                      Synopsis
+                    </summary>
+                    <div class="collapse-content">
+                      ${data.results[i].synopsis}
+                    </div>
+                  </details>
                   <p class="text-muted">
-                    ${data.results[i].synopsis}
+
                   </p>
                   <div class="text-right">
                     <a href="${data.results[i].url}" target="_blank" class="btn">Go To MAL</a>
