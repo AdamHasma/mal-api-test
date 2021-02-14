@@ -206,37 +206,48 @@ async function getPosts() {
   btn.setAttribute("disabled", true);
   cardContainer.innerHTML = '';
 
-  const response = await fetch(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreValue}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc`);
+  const anime = await fetch(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreValue}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc`)
+    .then(response => response.json());
+  this.anime = anime;
+
+  const animeIds = anime.results.map(anime => anime.mal_id)
+  console.log(animeIds)
+
+  console.log(anime);
   getURL();
-  const data = await response.json();
-  console.log(data);
 
   let html = '';
   document.querySelector(".results-container").innerHTML = '';
   try {
-    for (let i = 0, len = data.results.length; i < len; i++) {
+    for (let i = 0, len = anime.results.length; i < len; i++) {
       let htmlSegment =
         `   <div class="mw-full">
               <div class="card p-0">
-                <img src="${data.results[i].image_url}" class="img-fluid rounded-top" alt="...">
-                <p class="score font-size-12 text-monospace">Score: ${data.results[i].score}</p>
+                <div>
+                  <img src="${anime.results[i].image_url}" class="img-fluid rounded-top" alt="...">
+                  <span class="tags-group" role="group" aria-label="Genre Tags">
+                  </span>
+                </div>
+                <p class="score font-size-12 text-monospace">Score: ${anime.results[i].score}</p>
                 <div class="content">
                   <h2 class="content-title">
-                    ${data.results[i].title}
+                    ${anime.results[i].title}
                   </h2>
                   <details class="collapse-panel w-400 mw-full">
-                    <summary class="collapse-header">
+                    <summary class="collapse-header without-arrow">
+                      <span class="mr-5 hidden-collapse-open text-muted">&plus;</span>
+                      <span class="mr-5 hidden-collapse-closed text-muted">&minus;</span>
                       Synopsis
                     </summary>
-                    <div class="collapse-content">
-                      ${data.results[i].synopsis}
+                    <div class="collapse-content text-muted">
+                      ${anime.results[i].synopsis}
                     </div>
                   </details>
                   <p class="text-muted">
 
                   </p>
                   <div class="text-right">
-                    <a href="${data.results[i].url}" target="_blank" class="btn">Go To MAL</a>
+                    <a href="${anime.results[i].url}" target="_blank" class="btn">Go To MAL</a>
                   </div>
                 </div>
               </div>
@@ -262,8 +273,8 @@ async function getPosts() {
     cardContainerPlaceholder.style.display = "none"
     btn.removeAttribute("disabled");
   }
-};
 
-function getURL() {
-  console.log(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreValue}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc`)
-}
+  function getURL() {
+    console.log(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreValue}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc`)
+  }
+};
