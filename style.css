@@ -245,7 +245,7 @@ footer {
 }
 
 .card-container-placeholder {
-  display: flex;
+  display: none;
   justify-content: center;
 }
 
