@@ -223,11 +223,7 @@ async function getPosts() {
       let htmlSegment =
         `   <div class="mw-full">
               <div class="card p-0">
-                <div>
-                  <img src="${anime.results[i].image_url}" class="img-fluid rounded-top" alt="...">
-                  <span class="tags-group" role="group" aria-label="Genre Tags">
-                  </span>
-                </div>
+                <img src="${anime.results[i].image_url.replace('.jpg', 'l.jpg')}" class="img-fluid rounded-top" alt="...">
                 <p class="score font-size-12 text-monospace">Score: ${anime.results[i].score}</p>
                 <div class="content">
                   <h2 class="content-title">
