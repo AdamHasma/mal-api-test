@@ -4,15 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>👉👈 NeedAni.me</title>
+  <title>NeedAni.me</title>
   <meta name="og:description" content="NeedAni.me makes it easy for you to find a new anime you want to watch by using Jikan's API. New Features will be added by time, so don't forget to bookmark it!">
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet">
   <script defer src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="manifest" href="favicon/site.webmanifest">
 </head>
 
 <body class="dark-mode with-custom-webkit-scrollbars with-custom-css-scrollbars">
@@ -311,10 +307,6 @@
 
             <div class="w-full mb-5 genre-group border rounded d-flex">
               <div class="custom-checkbox d-inline-block">
-                <input type="checkbox" id="checkbox-6" value="" onclick="genrePush('checkbox-6', '9')">
-                <label for="checkbox-6">Ecchi</label>
-              </div>
-              <div class="custom-checkbox d-inline-block">
                 <input type="checkbox" id="checkbox-9" value="" onclick="genrePush('checkbox-9', '35')">
                 <label for="checkbox-9">Harem</label>
               </div>
@@ -447,10 +439,6 @@
             </div>
 
             <div class="w-full mb-5 genre-group border rounded d-flex">
-              <div class="custom-checkbox d-inline-block">
-                <input type="checkbox" id="exclude-checkbox-6" value="" onclick="excludeGenrePush('exclude-checkbox-6', '9')">
-                <label class="not-checkbox" for="exclude-checkbox-6">Ecchi</label>
-              </div>
               <div class="custom-checkbox d-inline-block">
                 <input type="checkbox" id="exclude-checkbox-9" value="" onclick="excludeGenrePush('exclude-checkbox-9', '35')">
                 <label class="not-checkbox" for="exclude-checkbox-9">Harem</label>
@@ -606,9 +594,19 @@
               </div>
             </div>
           </div>
-          <div class="custom-switch">
-            <input type="checkbox" id="switch-1" value="" onclick="booleanChange()">
-            <label for="switch-1">Only show completed ones</label>
+          <div class="switch-sort-container">
+            <div class="w-half m-0 custom-switch">
+              <input type="checkbox" id="switch-1" value="" onclick="booleanChange()">
+              <label for="switch-1">Only show completed ones</label>
+            </div>
+            <div class="m-0 sort-container">
+              <select class="form-control" id="select-sort">
+                <option value="&order_by=score&sort=desc" selected>Best anime first</option>
+                <option value="&order_by=start_date&sort=desc">Newest anime first</option>
+                <option value="&order_by=start_date&sort=asc">Oldest anime first</option>
+              </select>
+
+            </div>
           </div>
           <a class="a-btn" href="#cards-section"><button class="btn btn-primary" type="button">Show me!</button></a>
         </div>
