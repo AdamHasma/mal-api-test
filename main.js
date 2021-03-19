@@ -6,6 +6,8 @@ const scoreSelect = document.getElementById("multi-select-3");
 const scoreLabel = document.querySelector(".score-label");
 let scoreValue = 0;
 
+const sortSelect = document.getElementById("select-sort");
+
 const typeSelect = document.getElementById("select-2");
 
 const genreSelect = document.getElementById("select-1");
@@ -36,6 +38,7 @@ const plusTo5 = document.getElementById("plus-to-5");
 const minusTo1 = document.getElementById("minus-to-1");
 const minusTo5 = document.getElementById("minus-to-5");
 const endDate = document.getElementById("end-date");
+const allEndBtns = document.querySelectorAll(".from-to-wrapper:nth-child(2)>.btn-wrapper>button");
 let endDateValue = 2021;
 
 let genreArray = [];
@@ -47,13 +50,6 @@ let includeUrl = ``;
 // HTML Basic Structure START
 
 btn.addEventListener("click", getPosts);
-
-//DESELECT FUNCTION FOR SCORESELECT
-// contentWrapper.addEventListener('click', function(e) {
-//   if (scoreSelect.contains(e.target) || btn.contains(e.target) || typeSelect.contains(e.target) || genreSelect.contains(e.target) || dateWrapper.contains(e.target)) {} else {
-//     scoreSelect.selectedIndex = "-1";
-//   }
-// });
 
 //OLD LIGHT MODE SWITCHER
 // toggle.addEventListener("click", function() {
@@ -192,6 +188,31 @@ minusTo1.addEventListener("click", function() {
 });
 // CHANGING END VALUE END
 
+
+// To date fix
+let currentDate = endDate.value + '-12-31';
+let date = new Date();
+currentDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " ";
+
+
+const toDatefun = () => {
+  if (endDate.value === "2021") {
+    currentDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " ";
+  } else if (endDate.value !== "2021") {
+    currentDate = endDate.value + '-12-31';
+  };
+};
+
+endDate.addEventListener("change", function () {
+  toDatefun()
+});
+allEndBtns.forEach(item => {
+  item.addEventListener('click', function () {
+    toDatefun()
+  })
+})
+// To date fix
+
 // HTML Basic Structure END
 
 // Fetching Data
@@ -206,7 +227,7 @@ async function getPosts() {
   btn.setAttribute("disabled", true);
   cardContainer.innerHTML = '';
 
-  const anime = await fetch(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreValue}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc`)
+  const anime = await fetch(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreValue}&start_date=${startDate.value}-01-01&end_date=${currentDate}-01-01&status=${status}${sortSelect.value}`)
     .then(response => response.json());
   this.anime = anime;
 
@@ -271,6 +292,6 @@ async function getPosts() {
   }
 
   function getURL() {
-    console.log(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreValue}&start_date=${startDate.value}-01-01&end_date=${endDate.value}-01-01&status=${status}&order_by=score&sort=desc`)
+    console.log(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreValue}&start_date=${startDate.value}-01-01&end_date=${currentDate}-01-01&status=${status}${sortSelect.value}`)
   }
 };
