@@ -31,7 +31,7 @@ const plusFrom5 = document.getElementById("plus-from-5");
 const minusFrom1 = document.getElementById("minus-from-1");
 const minusFrom5 = document.getElementById("minus-from-5");
 const startDate = document.getElementById("start-date");
-let startDateValue = 1950;
+let startDateValue = 1980;
 
 const plusTo1 = document.getElementById("plus-to-1");
 const plusTo5 = document.getElementById("plus-to-5");
@@ -275,7 +275,7 @@ async function getPosts() {
     document.querySelector(".results-container").innerHTML +=
       `
     <h1 class="content-title results mb-0">Results</h1>
-    <p class="text-xl mt-0 mb-0 text-muted">Results are sorted starting from the best score</p>
+    <p class="text-xl mt-0 mb-0 text-muted">click on synopsis to collapse it</p>
     `;
 
     cardContainerPlaceholder.style.display = "none"
