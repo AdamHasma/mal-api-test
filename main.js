@@ -295,3 +295,13 @@ async function getPosts() {
     console.log(`${apiUrl}/search/anime?${includeUrl}${excludeUrl}&type=${typeSelect.value}&score=${scoreValue}&start_date=${startDate.value}-01-01&end_date=${currentDate}-01-01&status=${status}${sortSelect.value}`)
   }
 };
+
+
+// change cookie text
+document.arrive(".cc-nb-title", function() {
+    document.querySelector(".cc-nb-title").innerHTML = "I use cookies to improve this site :)"
+});
+
+document.arrive(".cc-nb-text", function() {
+    document.querySelector(".cc-nb-text").innerHTML = "I collect simple Google Analytics data, such as page views, origin of users and click behaviour. Your IP address is anonymized."
+});

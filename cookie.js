@@ -22,7 +22,7 @@ var $tracking_id = "G-64DX90H1SD";
 // Set Google Analytics Cookie domain & path (needed for clearing cookies – have look in the inspector to get the values needed)
 // If set to false, values from window.location.hostname and window.location.pathname will be used
 var $tracking_cookie_domain = false; // eg. ".example.com"
-var $tracking_cookie_path = false;   // eg. "/"
+var $tracking_cookie_path = false;   // eg. "/"UA-XXXXXXXX-X
 
 
 /* –  – NO FUTHER SETTINGS NEEDED BELOW THIS LINE –  – */
