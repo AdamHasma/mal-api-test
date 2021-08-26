@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <script src="https://cmp.osano.com/169lbnShC7msd1vh1/96fcace6-53cb-40be-a321-370f3dbabdcd/osano.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NeedAni.me</title>
@@ -9,6 +10,21 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet">
   <script defer src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-64DX90H1SD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-64DX90H1SD');
+    ga('set', 'anonymizeIp', true);
+  </script>
+
 </head>
 
 <body class="dark-mode with-custom-webkit-scrollbars with-custom-css-scrollbars">
@@ -152,6 +168,33 @@
   </div>
 
   <div class="page-wrapper">
+    <script type="text/javascript">
+    function toastAlert() {
+      const alertContent = "Cookies are optioned out";
+      // Built-in function
+      halfmoon.initStickyAlert({
+        content: alertContent      // Required, main content of the alert, type: string (can contain HTML)
+        title: "Cookies"      // Optional, title of the alert, default: "", type: string
+      })
+    }
+    </script>
+
+    <div class="cookie position-absolute z-1 bottom-0 w-400 mw-full">
+      <div class="card">
+        <h2 class="card-title">
+          This site uses cookies with Google Analytics
+        </h2>
+        <p class="text-muted">
+          Your IP address is anonymized, I just want to improve this website by looking at statistics, that's it. <a href="policy.html">read more here</a>
+        </p>
+        <div class="text-right">
+          <a href="javascript:gaOptout()" class="btn" onclick="toastAlert()">I don't want that</a>
+        </div>
+        <button class="btn" type="button" onclick="toastAlert()">Toast alert!</button>
+      </div>
+    </div>
+
+
     <div class="content-wrapper">
       <div class="container">
         <img class="logo w-400" src="logo.svg" alt="">
@@ -711,6 +754,7 @@
 
   </div>
   <script src="main.js" type="text/javascript"></script>
+  <script src="cookie.js" type="text/javascript"></script>
 </body>
 
 </html>
